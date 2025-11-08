@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0oldok1gtfkc"]
+
+[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_bjjod"]
+[ext_resource type="PackedScene" uid="uid://e41qiykmwis3" path="res://Assets/feu_de_camp.blend" id="2_mdbto"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0bkio"]
+height = 10.482666
+radius = 8.383789
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bcbv7"]
+height = 11.000244
+radius = 8.355957
+
+[node name="CampFire" type="StaticBody3D"]
+script = ExtResource("1_bjjod")
+category = 1
+
+[node name="feu_de_camp" parent="." instance=ExtResource("2_mdbto")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9405782, 4.124615, -7.518311)
+shape = SubResource("CylinderShape3D_0bkio")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9888568, 4.1052847, -7.406809)
+shape = SubResource("CylinderShape3D_bcbv7")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

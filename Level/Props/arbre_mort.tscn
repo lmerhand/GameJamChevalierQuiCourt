@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk8bnqwaorx03"]
+
+[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_71cc8"]
+[ext_resource type="PackedScene" uid="uid://c3vti5vccqw0c" path="res://Assets/Arbre_mort.blend" id="2_itnao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1tfc0"]
+size = Vector3(6.572296, 2.1433487, 2.1497407)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71cc8"]
+size = Vector3(6.1259766, 2.2044678, 2.0534668)
+
+[node name="ArbreMort" type="StaticBody3D"]
+script = ExtResource("1_71cc8")
+category = 1
+
+[node name="Arbre_mort" parent="." instance=ExtResource("2_itnao")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009181976, -0.096645355, -0.015623331)
+shape = SubResource("BoxShape3D_1tfc0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033691406, -0.06719971, -0.00012207031)
+shape = SubResource("BoxShape3D_71cc8")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
