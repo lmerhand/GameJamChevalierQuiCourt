@@ -70,9 +70,9 @@ func _physics_process(delta: float) -> void:
 	
 func speed_up():
 	if _current_objects_destroyed+1 == _palliers_max[_current_pallier]:
-		move_speed = 10
+		move_speed += 10
 		acceleration += 10
-		_camera_new_fov = clamp(_camera_new_fov* 1.1,75.0,179.0)
+		_camera_new_fov = clamp(_camera_new_fov* 1.2,75.0,179.0)
 		_current_objects_destroyed = 1
 		_current_pallier =clamp(_current_pallier + 1, 0, 4)
 	else:
