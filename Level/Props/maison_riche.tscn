@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpb3bvmwg64u2"]
+
+[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_fw5gp"]
+[ext_resource type="PackedScene" uid="uid://bxf8yyvgd6u6g" path="res://Assets/Maison_riche1.blend" id="2_hpxpp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4bvc"]
+size = Vector3(12.248291, 19.03424, 16.295898)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35qly"]
+size = Vector3(12.462067, 19.347168, 16.232315)
+
+[node name="Maison_Riche" type="StaticBody3D"]
+script = ExtResource("1_fw5gp")
+category = 3
+
+[node name="Maison_riche1" parent="." instance=ExtResource("2_hpxpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.060598, 1.1920929e-07, -7.4085464)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maison_riche1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7513428, 9.608978, 0.83935547)
+shape = SubResource("BoxShape3D_r4bvc")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_fw5gp")
+category = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.133871, 9.653991, -6.5005407)
+shape = SubResource("BoxShape3D_35qly")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
