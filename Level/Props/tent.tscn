@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://5weify2360mu"]
+
+[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_wlbrq"]
+[ext_resource type="PackedScene" uid="uid://bkevovfl588ik" path="res://Assets/Tent.blend" id="2_uo7hx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ic11m"]
+size = Vector3(4.006958, 1.897583, 1.9472656)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdihh"]
+size = Vector3(4.4983325, 2.2019043, 2.3486328)
+
+[node name="tent" type="StaticBody3D"]
+script = ExtResource("1_wlbrq")
+category = 1
+
+[node name="Tent" parent="." instance=ExtResource("2_uo7hx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.765206, 0, 0.3242209)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012145877, 0.4487915, 0.018554688)
+shape = SubResource("BoxShape3D_ic11m")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_wlbrq")
+category = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8014205, 0.60095215, 0.3946104)
+shape = SubResource("BoxShape3D_jdihh")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
