@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv1flwbdpmr6i"]
 
-[ext_resource type="Script" uid="uid://s1wih6j4emw8" path="res://button.gd" id="1_6qg5u"]
+[ext_resource type="Script" uid="uid://s1wih6j4emw8" path="res://GUI/speed_up_button.gd" id="1_6qg5u"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

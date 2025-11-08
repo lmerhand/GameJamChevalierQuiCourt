@@ -10,10 +10,10 @@ extends CharacterBody3D
 
 var current_speed : float
 
-var _palliers_max = {0:2, 1:10, 2:10, 3:10, 4:10}
-var _current_palliers = {0:0, 1:0, 2:0, 3:0, 4:0}
+var _tiers_max = {0:2, 1:10, 2:10, 3:10, 4:10}
+var _current_tiers = {0:0, 1:0, 2:0, 3:0, 4:0}
 var _current_objects_destroyed = 0
-var _current_pallier = 0
+var _current_tier = 0
 
 var _camera_new_fov = 75.0
 var _camera_input_direction = Vector2.ZERO
@@ -69,12 +69,17 @@ func _physics_process(delta: float) -> void:
 	_camera.fov = lerp(_camera.fov, _camera_new_fov, delta)
 	
 func speed_up():
-	if _current_objects_destroyed+1 == _palliers_max[_current_pallier]:
+	if _current_objects_destroyed+1 == _tiers_max[_current_tier]:
 		move_speed += 10
 		acceleration += 10
 		_camera_new_fov = clamp(_camera_new_fov* 1.2,75.0,179.0)
 		_current_objects_destroyed = 1
-		_current_pallier =clamp(_current_pallier + 1, 0, 4)
+		_current_tier = clamp(_current_tier + 1, 0, 4)
+		GlobalSignal.changed_tier.emit(_current_tier)
 	else:
+		print("HALF?",_current_objects_destroyed+1," == ", _tiers_max[_current_tier]/2)
+		if _current_objects_destroyed+1 == _tiers_max[_current_tier]/2:
+			GlobalSignal.changed_half_tier.emit(_current_tier)
+			print("SIGNAL EMITTED")
 		_current_objects_destroyed += 1
-	_current_palliers[_current_pallier] = _current_objects_destroyed
+	_current_tiers[_current_tier] = _current_objects_destroyed
