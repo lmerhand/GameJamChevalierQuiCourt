@@ -10,6 +10,11 @@ extends CharacterBody3D
 
 var current_speed : float
 
+var _palliers_max = {0:2, 1:10, 2:10, 3:10, 4:10}
+var _current_palliers = {0:0, 1:0, 2:0, 3:0, 4:0}
+var _current_objects_destroyed = 0
+var _current_pallier = 0
+
 var _camera_new_fov = 75.0
 var _camera_input_direction = Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
@@ -63,10 +68,13 @@ func _physics_process(delta: float) -> void:
 	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
 	_camera.fov = lerp(_camera.fov, _camera_new_fov, delta)
 	
-func speed_up(acc : float):
-	move_speed += acc
-	acceleration += acc
-	_camera_new_fov = clamp(_camera_new_fov* 1.05,75.0,179.0)
-
-#acceleration on slope
-#calculates speed
+func speed_up():
+	if _current_objects_destroyed+1 == _palliers_max[_current_pallier]:
+		move_speed = 10
+		acceleration += 10
+		_camera_new_fov = clamp(_camera_new_fov* 1.1,75.0,179.0)
+		_current_objects_destroyed = 1
+		_current_pallier =clamp(_current_pallier + 1, 0, 4)
+	else:
+		_current_objects_destroyed += 1
+	_current_palliers[_current_pallier] = _current_objects_destroyed

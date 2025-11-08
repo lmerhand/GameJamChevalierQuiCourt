@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx861wjgdrxpq"]
+[gd_scene load_steps=8 format=3 uid="uid://kb33k8e88owy"]
 
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="1_httya"]
 [ext_resource type="PackedScene" uid="uid://bv1flwbdpmr6i" path="res://GUI/speed_up_button.tscn" id="2_lob7s"]
+[ext_resource type="PackedScene" uid="uid://bca42tk2suc1s" path="res://Level/Object/destructible_object.tscn" id="3_5yf1o"]
 
 [sub_resource type="Environment" id="Environment_httya"]
 ambient_light_source = 3
@@ -36,3 +37,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.470152, 0.4214487, -2.73750
 mesh = SubResource("BoxMesh_lguof")
 
 [node name="SpeedUpButton" parent="." instance=ExtResource("2_lob7s")]
+
+[node name="DestructibleObject" parent="." instance=ExtResource("3_5yf1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28427124, 0.5764723, 14.402649)
+category = 0
+
+[node name="DestructibleObject2" parent="." instance=ExtResource("3_5yf1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7157288, 0.5764723, 14.402649)
+category = 0
+
+[node name="DestructibleObject3" parent="." instance=ExtResource("3_5yf1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2842712, 0.5764723, 14.402649)
+category = 0
