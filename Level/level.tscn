@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d0v40jhjlekji"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ground1" type="CSGBox3D" parent="."]
+transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, 22.025333)
+use_collision = true
+
+[node name="Ground2" type="CSGBox3D" parent="."]
+transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, -22.242474)
+use_collision = true
+
+[node name="Palissade" type="CSGBox3D" parent="."]
+transform = Transform3D(3.2915761, 0, 0, 0, 2.129298, 0, 0, 0, 1, 0.3152151, 3.8738627, -0.13097)
+size = Vector3(12.400513, 3.6305542, 1)
+
+[node name="EnnemyCastle" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9799881, 9.36597, -51.55766)
+size = Vector3(19.757446, 18.830536, 18.185669)
+
+[node name="FriendCastle" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8681946, 9.27988, 52.293526)
+size = Vector3(19.757446, 17.661072, 18.185669)
