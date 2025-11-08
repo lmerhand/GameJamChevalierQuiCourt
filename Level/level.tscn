@@ -1,23 +1,68 @@
-[gd_scene format=3 uid="uid://d0v40jhjlekji"]
+[gd_scene load_steps=3 format=3 uid="uid://b6bf6uhtn7ats"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://vhedbc4vugqt" path="res://Level/Zone1/Objects/destructible_object_test.tscn" id="1_o6mkr"]
 
-[node name="Ground1" type="CSGBox3D" parent="."]
-transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, 22.025333)
-use_collision = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmtf6"]
 
-[node name="Ground2" type="CSGBox3D" parent="."]
-transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, -22.242474)
-use_collision = true
+[node name="Level" type="Node3D"]
 
 [node name="Palissade" type="CSGBox3D" parent="."]
 transform = Transform3D(3.2915761, 0, 0, 0, 2.129298, 0, 0, 0, 1, 0.3152151, 3.8738627, -0.13097)
 size = Vector3(12.400513, 3.6305542, 1)
 
-[node name="EnnemyCastle" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9799881, 9.36597, -51.55766)
-size = Vector3(19.757446, 18.830536, 18.185669)
+[node name="Zone1" type="Node" parent="."]
 
-[node name="FriendCastle" type="CSGBox3D" parent="."]
+[node name="DestructibleObjects" type="Node" parent="Zone1"]
+
+[node name="DestructibleObjectTest2" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.636742, 1.0489416, 9.003759)
+
+[node name="DestructibleObjectTest3" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.636742, 1.0489416, 11.003759)
+
+[node name="DestructibleObjectTest4" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.636742, 1.0489416, 13.003759)
+
+[node name="DestructibleObjectTest5" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.636742, 1.0489416, 15.003759)
+
+[node name="DestructibleObjectTest6" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.636742, 1.0489416, 17.00376)
+
+[node name="DestructibleObjectTest7" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.636742, 1.0489416, 9.003759)
+
+[node name="DestructibleObjectTest8" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.636742, 1.0489416, 11.003759)
+
+[node name="DestructibleObjectTest9" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.636742, 1.0489416, 13.003759)
+
+[node name="DestructibleObjectTest10" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.636742, 1.0489416, 15.003759)
+
+[node name="DestructibleObjectTest11" parent="Zone1/DestructibleObjects" instance=ExtResource("1_o6mkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.636742, 1.0489416, 17.00376)
+
+[node name="Ground1" type="CSGBox3D" parent="Zone1"]
+transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, 22.025333)
+visible = false
+use_collision = true
+material = SubResource("StandardMaterial3D_qmtf6")
+
+[node name="FriendCastle" type="CSGBox3D" parent="Zone1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8681946, 9.27988, 52.293526)
+visible = false
 size = Vector3(19.757446, 17.661072, 18.185669)
+
+[node name="Zone2" type="Node" parent="."]
+
+[node name="Ground2" type="CSGBox3D" parent="Zone2"]
+transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, -22.242474)
+visible = false
+use_collision = true
+
+[node name="EnnemyCastle" type="CSGBox3D" parent="Zone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9799881, 9.36597, -51.55766)
+visible = false
+size = Vector3(19.757446, 18.830536, 18.185669)
