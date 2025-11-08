@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwx5sbk425b7c"]
+
+[ext_resource type="PackedScene" uid="uid://dp7axkifkix7b" path="res://Level/Chateau.tscn" id="1_o6mkr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmtf6"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Palissade" type="CSGBox3D" parent="."]
+transform = Transform3D(3.2915761, 0, 0, 0, 2.129298, 0, 0, 0, 1, 0.3152151, 3.8738627, -0.13097)
+size = Vector3(12.400513, 3.6305542, 1)
+
+[node name="Zone1" type="Node" parent="."]
+
+[node name="DestructibleObjects" type="Node" parent="Zone1"]
+
+[node name="Ground1" type="CSGBox3D" parent="Zone1"]
+transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, 22.025333)
+use_collision = true
+material = SubResource("StandardMaterial3D_qmtf6")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Zone1"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Zone1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009410381, 0, 72.37767)
+use_collision = true
+size = Vector3(40.04, 1, 58.393)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Zone1/CSGCombiner3D"]
+transform = Transform3D(0.95068926, 0.0010076559, 0.31014302, -0.0006810854, 0.9999991, -0.0011613091, -0.31014395, 0.00089283043, 0.95068914, -38.454437, -1.5696853, 81.64261)
+operation = 2
+use_collision = true
+size = Vector3(47.312378, 5.9572754, 89.41048)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Zone1/CSGCombiner3D"]
+transform = Transform3D(0.9618934, 0.00033757597, -0.27342412, -0.0006810854, 0.99999905, -0.001161309, 0.27342346, 0.0013032877, 0.9618928, 37.390724, -1.1056899, 81.64255)
+operation = 2
+use_collision = true
+size = Vector3(47.312378, 3.2993164, 89.41048)
+
+[node name="Zone2" type="Node" parent="."]
+
+[node name="Ground2" type="CSGBox3D" parent="Zone2"]
+transform = Transform3D(40.011757, 0, 0, 0, 1, 0, 0, 0, 42.335155, 0, 0, -22.242474)
+use_collision = true
+
+[node name="Node3D" parent="." instance=ExtResource("1_o6mkr")]
+transform = Transform3D(-1.1841675, 0, 12.566975, 0, 12.622643, 0, -12.566975, 0, -1.1841675, -9.10285, -8.921318, -51.96289)
