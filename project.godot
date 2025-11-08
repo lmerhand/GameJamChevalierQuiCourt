@@ -14,6 +14,10 @@ config/name="ChevalierQuiCourt"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+GlobalSignal="*res://Core/GlobalSignal.gd"
+
 [file_customization]
 
 folder_colors={
