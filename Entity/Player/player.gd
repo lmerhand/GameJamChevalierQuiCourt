@@ -18,6 +18,9 @@ var _last_movement_direction := Vector3.BACK
 @onready var _skin : MeshInstance3D = %Skin
 @onready var _camera_pivot: Node3D = %CameraPivot
 
+func _ready() -> void:
+	GlobalSignal.broke_an_obstacle.connect(speed_up)
+
 func _input(event: InputEvent) -> void:
 	#activates the mouth for camera rotation
 	if event.is_action_pressed("right_click"):
@@ -54,10 +57,13 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
 	move_and_slide()
 	
-	if move_direction.length() > 0.2: #alors ça jsp?? pourquoi 0.2?
+	if move_direction.length() > 0.2:
 		_last_movement_direction = move_direction
 	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
 	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
-#acceleration on slope
 
+func speed_up(acc : float):
+	move_speed += acc
+	acceleration += acc
+#acceleration on slope
 #calculates speed
