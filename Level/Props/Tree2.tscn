@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1swk3vdb7m8j"]
+
+[ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre 2.blend" id="1_l21x7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ypxmb"]
+radius = 1.4765625
+height = 7.7609863
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4s0c2"]
+radius = 5.255371
+height = 16.66211
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="arbre 2" parent="." instance=ExtResource("1_l21x7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8369575, 0, -0.16452503)
+
+[node name="Camera" parent="arbre 2" index="2"]
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8846886, 2.8804932, -0.31579566)
+shape = SubResource("CapsuleShape3D_ypxmb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.91713405, 11.024391, 0.07080078)
+shape = SubResource("CapsuleShape3D_4s0c2")
+
+[editable path="arbre 2"]
