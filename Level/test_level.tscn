@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, -0.0106113795, 0.99994373, 0, -0.99994373, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0074107647, 0.9285134, -0.012902796)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(23.202099, 0, 0, 0, 0.04423065, 0, 0, 0, 22.84044, 0, 0, 0)
+transform = Transform3D(180.58331, 0, 0, 0, 0.04423065, 0, 0, 0, 177.76851, 0, 0, 0)
 mesh = SubResource("BoxMesh_lguof")
 
 [node name="Box" type="MeshInstance3D" parent="."]
@@ -36,4 +36,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.470152, 0.4214487, -2.73750
 mesh = SubResource("BoxMesh_lguof")
 
 [node name="SpeedUpButton" parent="." instance=ExtResource("2_lob7s")]
-visible = false

@@ -23,6 +23,7 @@ mesh = SubResource("CapsuleMesh_mc1dd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Skin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38523567, 0.38196862)
+layers = 2
 mesh = SubResource("BoxMesh_mc1dd")
 
 [node name="CameraPivot" type="Node3D" parent="."]
@@ -36,3 +37,4 @@ spring_length = 4.0
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.98977625, 0.14262894, 0, -0.14262894, 0.98977625, 0, 0.74593705, 1.9669697)
+fov = 148.3

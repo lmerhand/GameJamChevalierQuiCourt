@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_group("Camera")
-@export_range(0.0,1.0) var mouse_sensitivity := 0.20
+@export_range(0.0,1.0) var mouse_sensitivity := 0.15
 
 @export_group("Movement")
 @export var move_speed := 8.0
@@ -9,8 +9,8 @@ extends CharacterBody3D
 @export var rotation_speed := 12.0
 
 var current_speed : float
-var camera_rotation_weight = 1
 
+var _camera_new_fov = 75.0
 var _camera_input_direction = Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 
@@ -39,8 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	#turns the camera according to the mouse drag
-	_camera_pivot.rotation.x += _camera_input_direction.y * delta
-	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, -PI / 6.0, PI / 3.0)
+	#_camera_pivot.rotation.x += _camera_input_direction.y * delta
+	#_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, -PI / 3.0, PI / 12.0)
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
 	
 	_camera_input_direction = Vector2.ZERO
@@ -61,9 +61,12 @@ func _physics_process(delta: float) -> void:
 		_last_movement_direction = move_direction
 	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
 	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
-
+	_camera.fov = lerp(_camera.fov, _camera_new_fov, delta)
+	
 func speed_up(acc : float):
 	move_speed += acc
 	acceleration += acc
+	_camera_new_fov = clamp(_camera_new_fov* 1.05,75.0,179.0)
+
 #acceleration on slope
 #calculates speed
