@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvaf2k0bpxfst"]
+
+[ext_resource type="Texture2D" uid="uid://dj5o0kwtgexpp" path="res://Assets/Leaf01.png" id="1_b8lnq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lpd5"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_b8lnq")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_beu5a"]
+lifetime_randomness = 0.43
+emission_shape_scale = Vector3(3, 3, 3)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+radial_velocity_min = -20.000021
+radial_velocity_max = 19.999977
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+tangential_accel_min = 38.359997
+tangential_accel_max = 38.359997
+scale_min = 0.03
+hue_variation_min = -0.57
+hue_variation_max = 0.7
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_beu5a"]
+orientation = 2
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_6lpd5")
+emitting = false
+amount = 30
+lifetime = 1.93
+one_shot = true
+preprocess = 0.01
+speed_scale = 2.5
+explosiveness = 0.62
+randomness = 0.52
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_beu5a")
+draw_pass_1 = SubResource("PlaneMesh_beu5a")
