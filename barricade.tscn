@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgrptqkpitxek"]
+
+[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_4w3go"]
+[ext_resource type="PackedScene" uid="uid://brkhdaewsauom" path="res://Assets/barica.blendde.blend" id="2_0fcun"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mmjl"]
+size = Vector3(6.625499, 18.40787, 287.60284)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0sxi"]
+size = Vector3(3.2058716, 17.241058, 288.1875)
+
+[node name="Barricade" type="StaticBody3D"]
+script = ExtResource("1_4w3go")
+
+[node name="barica_blendde" parent="." instance=ExtResource("2_0fcun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.106522, 0, -0.2740667)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0890064, 7.5543184, 148.14136)
+shape = SubResource("BoxShape3D_4mmjl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.302765, 7.391464, 147.14893)
+shape = SubResource("BoxShape3D_c0sxi")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8oofyg0dcy8o" path="res://Entity/EvilCastle/evil_castle.gd" id="1_ljjpk"]
 [ext_resource type="PackedScene" uid="uid://bhen8kc24pt0p" path="res://Assets/chateau_mechant.blend" id="2_ljjpk"]
-[ext_resource type="AudioStream" uid="uid://bykwskt0ij87j" path="res://Entity/EvilCastle/Voicelines/Punch/armure sied guere.wav" id="3_ljjpk"]
+[ext_resource type="AudioStream" uid="uid://cuhygujcxgucu" path="res://Entity/EvilCastle/Voicelines/intro/Sors de laa.wav" id="3_ljjpk"]
 
 [sub_resource type="Animation" id="Animation_nollt"]
 resource_name = "Idle"
@@ -112,7 +112,6 @@ shape = SubResource("CylinderShape3D_w2w8l")
 stream = ExtResource("3_ljjpk")
 autoplay = true
 bus = &"EvilCastlee"
-parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16788101, 1.8955262, 0.63801956)

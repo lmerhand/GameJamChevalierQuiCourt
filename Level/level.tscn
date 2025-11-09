@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://d0v40jhjlekji"]
+[gd_scene load_steps=29 format=3 uid="uid://d0v40jhjlekji"]
 
 [ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/barricade.tscn" id="1_52x1o"]
+[ext_resource type="PackedScene" uid="uid://cqh2xfh7wpwfy" path="res://Entity/EvilCastle/evil_castle.tscn" id="2_iincs"]
 [ext_resource type="PackedScene" uid="uid://mdteqoqht11v" path="res://Level/Props/Maison_départ.tscn" id="2_py82k"]
 [ext_resource type="Texture2D" uid="uid://basf87h3qtsmw" path="res://VFX/cliff_rocks_05_basecolor_1k.png" id="2_uqeto"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="3_1teg4"]
@@ -208,7 +209,7 @@ transform = Transform3D(0.11879957, 0, 0, 0, 0.11879957, 0, 0, 0, 0.11879957, 30
 [node name="Zone2" type="Node" parent="."]
 
 [node name="Node3D" parent="." instance=ExtResource("1_52x1o")]
-transform = Transform3D(-6.553192e-08, 0, -0.27092418, 0, 1.5732925, 0, 1.4991956, 0, -1.1842472e-08, 77.21717, 5.0478992, -27.76823)
+transform = Transform3D(-6.50781e-08, -0.10134514, -0.26904792, -7.699044e-09, 0.856645, -0.031829633, 1.4991957, 3.816545e-16, -1.1842474e-08, 77.21717, 9.958349, -27.76823)
 
 [node name="Tree5" parent="." instance=ExtResource("3_nk1il")]
 transform = Transform3D(0.49107367, 0, 0.46934578, 0, 0.6792929, 0, -0.46934578, 0, 0.49107367, 42.92612, -1.0267501, -58.691826)
@@ -261,8 +262,20 @@ transform = Transform3D(-0.49710712, 0.09810758, 0.07825935, 0.031697176, 0.4075
 [node name="CampFire3" parent="." instance=ExtResource("6_d6qko")]
 transform = Transform3D(-0.09099768, -0.0018928386, -0.07634909, 0.016963325, 0.11529557, -0.023076368, 0.07446481, -0.02857778, -0.088043354, 34.505157, 0.5541518, -53.610294)
 
+[node name="ArbreMort10" parent="." instance=ExtResource("5_nk1il")]
+transform = Transform3D(0.3870489, -0.22056751, -0.2537881, 0.21827482, 0.45917475, -0.06618119, 0.2557626, -0.058084816, 0.4405414, 70.56416, 5.1629605, -81.963745)
+
+[node name="ArbreMort11" parent="." instance=ExtResource("5_nk1il")]
+transform = Transform3D(0.042858407, -0.20150161, -0.46949455, 0.07138033, 0.46888447, -0.19472355, 0.50589824, -0.04908722, 0.06724919, 74.92179, 7.0784965, -86.06982)
+
+[node name="ArbreMort12" parent="." instance=ExtResource("5_nk1il")]
+transform = Transform3D(-0.2401894, -0.34347954, -0.29528934, -0.020107148, 0.3419917, -0.38144797, 0.4525151, -0.1671185, -0.17368524, 69.941246, 4.5319104, -87.06964)
+
+[node name="CampFire4" parent="." instance=ExtResource("6_d6qko")]
+transform = Transform3D(0.045255803, -0.052170023, -0.09666193, 0.027266752, 0.10660821, -0.044772245, 0.106403835, -0.005130097, 0.052585643, 71.90296, 5.1888647, -84.18158)
+
 [node name="Player" parent="." instance=ExtResource("3_1teg4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.02536, 1.0174421, -85.439644)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.021, 1.0004413, -85.14658)
 move_speed = 1.5
 
 [node name="Node3D18" parent="." instance=ExtResource("2_py82k")]
@@ -344,3 +357,6 @@ transform = Transform3D(0.30312747, -0.0023414493, 0.45428413, 0.00018757458, 0.
 
 [node name="Fontaine" parent="." instance=ExtResource("21_cv6tn")]
 transform = Transform3D(1, 0, 0, 0, 0.92589694, 0.37777615, 0, -0.37777615, 0.92589694, 40.740715, 15.888533, -2.9107878)
+
+[node name="EvilCastle" parent="." instance=ExtResource("2_iincs")]
+transform = Transform3D(-1.1664719e-06, 0, 26.685766, 0, 26.685766, 0, -26.685766, 0, -1.1664719e-06, 23.196877, 0.66646385, 83.0493)

@@ -1,4 +1,7 @@
 extends Node3D
+
+signal disappeared(tier)
+
 @export_enum("Marche","Marche Rapide","Court","Galope","Fly") var category
 @export var mesh : Node3D
 @export var particles : PackedScene = preload("res://VFX/explosion_feuille.tscn")
@@ -41,11 +44,28 @@ func _animation_destroy():
 	#tween.tween_property(mesh,"rotation",Vector3(randf_range(0,10),randf_range(0,10),randf_range(0,10)),1)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_class("CharacterBody3D"):
-		player = body
-		if body._current_tier >= category:
-			GlobalSignal.broke_an_obstacle.emit(category)
-			_animation_destroy()
-		else:
-			GlobalSignal.bumped_into_an_obstacle.emit()
-			print("too slow!")
+	if not body.is_class("CharacterBody3D"):
+		return
+
+	# Cas : tier égal -> obstacle cassé, puis disparition
+	if body._current_tier == category:
+		GlobalSignal.broke_an_obstacle.emit(category)
+		_emit_disappear()
+		queue_free()
+	# Cas : tier supérieur -> trop rapide, pas d'xp, disparition
+	elif body._current_tier > category:
+		print("too fast! no exp")
+		GlobalSignal.broke_an_obstacle.emit(category)
+		_emit_disappear()
+		queue_free()
+	# Cas : tier inférieur -> heurté mais reste en place
+	else:
+		GlobalSignal.bumped_into_an_obstacle.emit()
+		print("too slow!")
+
+# Petite méthode utilitaire pour émettre les signaux de disparition puis supprimer l'objet
+func _emit_disappear() -> void:
+	# Signal local : utile pour les connexions locales (par ex. le parent ou un contrôleur)
+	GlobalSignal.check_name.emit(self.name)
+	print(self.name)
+	

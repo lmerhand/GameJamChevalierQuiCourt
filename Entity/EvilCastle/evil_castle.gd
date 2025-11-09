@@ -2,11 +2,13 @@ extends StaticBody3D
 @export var audio_player : AudioStreamPlayer
 @export var animation_tree : AnimationTree
 var spectrum_instance
-var _audio_lines_path := "res://Entity/EvilCastle/Voicelines/"
+var _audio_lines_path := "res://Entity/EvilCastle/Voicelines/Punch"
 var _audio_lines : Array
 var _audio_timer : Timer
 
 func _ready() -> void:
+	print("bjr")
+	GlobalSignal.check_name.connect(play_audio2)
 	spectrum_instance = AudioServer.get_bus_effect_instance(1,0)
 	_audio_lines = get_voicelines(_audio_lines_path)
 	_audio_timer = Timer.new()
@@ -14,6 +16,7 @@ func _ready() -> void:
 	_audio_timer.timeout.connect(audio_timer_randomizer)
 	_audio_timer.timeout.connect(play_audio)
 	audio_timer_randomizer()
+	
 
 func get_voicelines(path):
 	var scene_loads = []
@@ -26,7 +29,7 @@ func get_voicelines(path):
 			if dir.current_is_dir():
 				print("Found directory: " + file_name)
 			else:
-				if file_name.get_extension() == "mp3":
+				if file_name.get_extension() == "wav":
 					var full_path = path.path_join(file_name)
 					scene_loads.append(load(full_path))
 			file_name = dir.get_next()
@@ -34,10 +37,13 @@ func get_voicelines(path):
 		print("An error occurred when trying to access the path.")
 	return scene_loads
 func audio_timer_randomizer():
-	_audio_timer.start(randi_range(0,1))
+	_audio_timer.start(randi_range(12,15))
 func play_audio():
 	$AudioStreamPlayer.stream = _audio_lines[randi_range(0,_audio_lines.size()-1)]
-	$AudioStreamPlayer.play("res://Entity/EvilCastle/Voicelines/intro/Intro 1.wav") 
+	$AudioStreamPlayer.play() 
+
+func play_audio2(name):
+	print("yipee")
 
 func _process(delta: float) -> void:
 	var freq_start := 1000.0
