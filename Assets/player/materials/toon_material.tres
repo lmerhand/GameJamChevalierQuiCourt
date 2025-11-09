@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnkd6mf8sfn57"]
 
-[ext_resource type="Shader" uid="uid://desebuumcfqty" path="res://materials/shaders/toon_shader.gdshader" id="1_50bgh"]
-[ext_resource type="Texture2D" uid="uid://b7slbk2l2w2wa" path="res://textures/Player_Base_color.png" id="2_cabul"]
+[ext_resource type="Shader" uid="uid://desebuumcfqty" path="res://Assets/player/materials/shaders/toon_shader.gdshader" id="1_50bgh"]
+[ext_resource type="Texture2D" uid="uid://b7slbk2l2w2wa" path="res://Assets/player/textures/Player_Base_color.png" id="2_cabul"]
 
 [resource]
 render_priority = 0
