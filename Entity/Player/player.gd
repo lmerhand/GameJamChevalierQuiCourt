@@ -20,7 +20,7 @@ var _camera_input_direction = Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 
 @onready var _camera : Camera3D = %Camera3D
-@onready var _skin : MeshInstance3D = %Skin
+@onready var _skin := %Skin
 @onready var _camera_pivot: Node3D = %CameraPivot
 
 func _ready() -> void:

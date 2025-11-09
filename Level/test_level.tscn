@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kb33k8e88owy"]
+[gd_scene load_steps=8 format=3 uid="uid://kb33k8e88owy"]
 
 [ext_resource type="PackedScene" uid="uid://c60vk26jccr6o" path="res://GUI/gui.tscn" id="1_5yf1o"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="1_httya"]
@@ -14,8 +14,6 @@ ambient_light_energy = 1.88
 [sub_resource type="Compositor" id="Compositor_5yf1o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lguof"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yf1o"]
 
 [node name="Test" type="Node3D"]
 
@@ -47,9 +45,6 @@ category = 0
 [node name="DestructibleObject2" parent="." instance=ExtResource("3_5yf1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7157288, 0.5764723, 14.402649)
 category = 1
-
-[node name="MeshInstance3D" parent="DestructibleObject2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_5yf1o")
 
 [node name="DestructibleObject3" parent="." instance=ExtResource("3_5yf1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2842712, 0.5764723, 14.402649)
