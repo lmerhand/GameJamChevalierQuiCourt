@@ -9,9 +9,10 @@ size = Vector3(6.591812, 2.2167454, 2.3397014)
 [sub_resource type="BoxShape3D" id="BoxShape3D_71cc8"]
 size = Vector3(6.1259766, 2.1385193, 1.7919846)
 
-[node name="ArbreMort" type="StaticBody3D"]
+[node name="ArbreMort" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_71cc8")
 category = 1
+mesh = NodePath("Arbre_mort")
 
 [node name="Arbre_mort" parent="." instance=ExtResource("2_itnao")]
 

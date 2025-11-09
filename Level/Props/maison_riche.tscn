@@ -9,11 +9,12 @@ size = Vector3(15.465738, 19.347168, 21.705553)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r4bvc"]
 size = Vector3(12.799988, 19.03424, 17.705078)
 
-[node name="Maison_Riche" type="StaticBody3D"]
+[node name="MaisonRiche" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_fw5gp")
 category = 3
+mesh = NodePath("MaisonRiche")
 
-[node name="Maison_riche1" parent="." instance=ExtResource("2_hpxpp")]
+[node name="MaisonRiche" parent="." instance=ExtResource("2_hpxpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.060598, 1.1920929e-07, -7.4085464)
 
 [node name="Area3D" type="Area3D" parent="."]
