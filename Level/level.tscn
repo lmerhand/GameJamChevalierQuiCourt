@@ -77,7 +77,7 @@ size = Vector3(63.622284, 1, 161.3863)
 [node name="Zone2" type="Node" parent="."]
 
 [node name="Node3D" parent="." instance=ExtResource("1_52x1o")]
-transform = Transform3D(-4.371139e-08, 0, -0.3276478, 0, 0.509164, 0, 1, 0, -1.432194e-08, 80.466545, 18.919369, -5.729702)
+transform = Transform3D(-4.371139e-08, 0, -0.3276478, 0, 0.509164, 0, 1, 0, -1.432194e-08, 80.466545, 13.046783, -15.275364)
 
 [node name="Node3D2" parent="." instance=ExtResource("2_iincs")]
 transform = Transform3D(-7.1531997e-07, 0, 16.364614, 0, 16.364614, 0, -16.364614, 0, -7.1531997e-07, 27.630005, 31.35976, 78.03372)
