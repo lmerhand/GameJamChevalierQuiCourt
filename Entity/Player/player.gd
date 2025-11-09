@@ -76,7 +76,8 @@ func _physics_process(delta: float) -> void:
 	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
 	_camera.fov = lerp(_camera.fov, _camera_new_fov, delta)
 	
-	velocity.y -= get_gravity().y
+	if !is_on_floor():
+		velocity.y += get_gravity().y
 	
 func speed_up():
 	if _current_objects_destroyed+1 == _tiers_max[_current_tier]: #speed up!
