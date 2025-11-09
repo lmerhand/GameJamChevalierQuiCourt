@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0v40jhjlekji"]
 
-[ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/Barricade.tscn" id="1_52x1o"]
-[ext_resource type="PackedScene" uid="uid://dp7axkifkix7b" path="res://Level/Props/Chateau.tscn" id="2_iincs"]
-[ext_resource type="PackedScene" uid="uid://cj3q5w1tm74nr" path="res://Level/Props/Tree1.tscn" id="3_nk1il"]
-[ext_resource type="PackedScene" uid="uid://c1swk3vdb7m8j" path="res://Level/Props/Tree2.tscn" id="4_d6qko"]
-[ext_resource type="PackedScene" uid="uid://dk8bnqwaorx03" path="res://Level/Props/arbre_mort.tscn" id="5_nk1il"]
-[ext_resource type="PackedScene" uid="uid://d0oldok1gtfkc" path="res://Level/Props/CampFire.tscn" id="6_d6qko"]
+[ext_resource type="PackedScene" uid="uid://dp7axkifkix7b" path="res://Entity/EvilCastle/evil_castle.tscn" id="1_o6mkr"]
+[ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/barricade.tscn" id="2_qmtf6"]
+[ext_resource type="PackedScene" uid="uid://cj3q5w1tm74nr" path="res://Level/Props/Tree1.tscn" id="3_52x1o"]
+[ext_resource type="PackedScene" uid="uid://c1swk3vdb7m8j" path="res://Level/Props/Tree2.tscn" id="4_iincs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmtf6"]
 
 [node name="Level" type="Node3D"]
 

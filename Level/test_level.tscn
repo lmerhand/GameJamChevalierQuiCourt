@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://kb33k8e88owy"]
+[gd_scene load_steps=10 format=3 uid="uid://kb33k8e88owy"]
 
 [ext_resource type="PackedScene" uid="uid://c60vk26jccr6o" path="res://GUI/gui.tscn" id="1_5yf1o"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="1_httya"]
 [ext_resource type="PackedScene" uid="uid://bca42tk2suc1s" path="res://Level/Object/destructible_object.tscn" id="3_5yf1o"]
+[ext_resource type="PackedScene" uid="uid://cqh2xfh7wpwfy" path="res://Entity/EvilCastle/evil_castle.tscn" id="4_apcuj"]
 
 [sub_resource type="Environment" id="Environment_httya"]
 ambient_light_source = 3
@@ -50,4 +51,12 @@ category = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2842712, 0.5764723, 14.402649)
 category = 0
 
+[node name="EvilCastle" parent="." instance=ExtResource("4_apcuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.623647, 0, 0)
+
+[node name="AnimationTree" parent="EvilCastle/chateau_mechant" index="3"]
+parameters/blend_position = 0.72204804
+
 [editable path="DestructibleObject2"]
+[editable path="EvilCastle"]
+[editable path="EvilCastle/chateau_mechant"]
