@@ -20,7 +20,7 @@ cull_mode = 2
 albedo_texture = ExtResource("3_0k3im")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3pdvr"]
-size = Vector3(12.850053, 1.8981371, 9.253944)
+size = Vector3(12.850053, 1.8981371, 4.8247166)
 
 [node name="tas_de_feuille2" instance=ExtResource("1_85ndd")]
 
@@ -34,7 +34,7 @@ category = 0
 script = ExtResource("4_3pdvr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17803144, 0.7479453, -2.3248796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17803144, 0.7479453, -0.11026573)
 shape = SubResource("BoxShape3D_3pdvr")
 
 [connection signal="body_entered" from="Area3D" to="tas_de_feuille" method="_on_area_3d_body_entered"]
