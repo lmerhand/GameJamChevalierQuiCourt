@@ -22,7 +22,7 @@ var noise = FastNoiseLite.new()
 
 var bumped : bool = false
 
-var _tiers_max = {0:2, 1:10, 2:10, 3:10, 4:10}
+var _tiers_max = {0:2, 1:10, 2:10, 3:10, 4:6}
 var _current_tiers = {0:0, 1:0, 2:0, 3:0, 4:0}
 var _current_objects_destroyed = 0
 var _current_tier = 0

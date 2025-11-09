@@ -1,23 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0v40jhjlekji"]
+[gd_scene load_steps=27 format=3 uid="uid://d0v40jhjlekji"]
 
 [ext_resource type="PackedScene" uid="uid://cqh2xfh7wpwfy" path="res://Entity/EvilCastle/evil_castle.tscn" id="2_iincs"]
-[ext_resource type="PackedScene" uid="uid://mdteqoqht11v" path="res://Level/Props/Maison_départ.tscn" id="2_py82k"]
+[ext_resource type="PackedScene" path="res://Level/Props/maison_depart.tscn" id="2_py82k"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="3_1teg4"]
 [ext_resource type="PackedScene" uid="uid://cj3q5w1tm74nr" path="res://Level/Props/Tree1.tscn" id="3_nk1il"]
 [ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="4_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dk8bnqwaorx03" path="res://Level/Props/arbre_mort.tscn" id="5_nk1il"]
-[ext_resource type="PackedScene" uid="uid://bam524yr8g8f6" path="res://Level/Props/camp_fire.tscn" id="6_d6qko"]
+[ext_resource type="PackedScene" path="res://Level/Props/camp_fire.tscn" id="6_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dkjrrgxedqyls" path="res://Level/Props/tas_de_feuille.tscn" id="10_1teg4"]
 [ext_resource type="PackedScene" uid="uid://fj1cbf3jd4jx" path="res://Level/Props/door.tscn" id="10_py82k"]
-[ext_resource type="PackedScene" uid="uid://c60vk26jccr6o" path="res://GUI/gui.tscn" id="11_1teg4"]
+[ext_resource type="PackedScene" uid="uid://cols35b6pqb4t" path="res://GUI/gui.tscn" id="11_1teg4"]
 [ext_resource type="PackedScene" uid="uid://cpb3bvmwg64u2" path="res://Level/Props/maison_riche.tscn" id="12_i5g78"]
 [ext_resource type="PackedScene" uid="uid://b3acvlou5g0gs" path="res://Assets/terrain.blend" id="16_uqeto"]
-[ext_resource type="PackedScene" path="res://Level/Props/arrow.tscn" id="17_k8npl"]
+[ext_resource type="PackedScene" uid="uid://dg7sja145b57v" path="res://Level/Props/arrow.tscn" id="17_k8npl"]
 [ext_resource type="PackedScene" uid="uid://comf1is7mu5dm" path="res://Assets/rampe.blend" id="18_am3y4"]
-[ext_resource type="PackedScene" uid="uid://pnxsg55p4l7c" path="res://Level/Props/tree2.tscn" id="19_am3y4"]
+[ext_resource type="PackedScene" path="res://Level/Props/tree2.tscn" id="19_am3y4"]
 [ext_resource type="AudioStream" uid="uid://dpm7gos0nhvhs" path="res://Entity/sound_chambouleur.wav" id="19_l5n2q"]
 [ext_resource type="PackedScene" uid="uid://5weify2360mu" path="res://Level/Props/tent.tscn" id="20_cv6tn"]
-[ext_resource type="PackedScene" uid="uid://corbh4aa86ji" path="res://Level/Props/fontaine.tscn" id="21_cv6tn"]
+[ext_resource type="PackedScene" path="res://Level/Props/barricade.tscn" id="20_l5n2q"]
+[ext_resource type="PackedScene" uid="uid://befjh5hc4nvjn" path="res://Level/Props/fontaine.tscn" id="21_cv6tn"]
 [ext_resource type="PackedScene" uid="uid://ejju0w3deplo" path="res://Level/Props/market.tscn" id="21_jghi6"]
 
 [sub_resource type="Curve" id="Curve_1p6h5"]
@@ -37,7 +38,7 @@ sky_material = SubResource("ProceduralSkyMaterial_d6qko")
 [sub_resource type="Environment" id="Environment_wqlfs"]
 background_mode = 2
 sky = SubResource("Sky_22cqp")
-tonemap_mode = 2
+tonemap_mode = 3
 glow_enabled = true
 fog_mode = 1
 fog_light_energy = 0.45
@@ -45,10 +46,13 @@ fog_density = 0.6518
 adjustment_enabled = true
 adjustment_color_correction = SubResource("CurveTexture_uqeto")
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_am3y4"]
+
 [node name="Level" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wqlfs")
+camera_attributes = SubResource("CameraAttributesPractical_am3y4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 28.031004, 45.693626, -4.128231)
@@ -271,7 +275,7 @@ transform = Transform3D(-0.2401894, -0.34347954, -0.29528934, -0.020107148, 0.34
 transform = Transform3D(0.045255803, -0.052170023, -0.09666193, 0.027266752, 0.10660821, -0.044772245, 0.106403835, -0.005130097, 0.052585643, 71.90296, 5.1888647, -84.18158)
 
 [node name="Player" parent="." instance=ExtResource("3_1teg4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.021, 1.0004413, -85.14658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.251926, 1.0966537, -84.785645)
 move_speed = 1.5
 
 [node name="Node3D18" parent="." instance=ExtResource("2_py82k")]
@@ -292,11 +296,17 @@ transform = Transform3D(0.4798861, 0.06703368, 0, -0.06703368, 0.4798861, 0, 0, 
 [node name="Maison_Riche2" parent="." instance=ExtResource("12_i5g78")]
 transform = Transform3D(0.49385676, 0.03073336, 0, -0.03073336, 0.49385676, 0, 0, 0, 0.49481213, 56.497894, 19.06817, 33.128483)
 
+[node name="Maison_Riche6" parent="." instance=ExtResource("12_i5g78")]
+transform = Transform3D(0.49385676, 0.03073336, 0, -0.03073336, 0.49385676, 0, 0, 0, 0.49481213, 16.863838, 19.06817, 23.94677)
+
 [node name="Maison_Riche3" parent="." instance=ExtResource("12_i5g78")]
 transform = Transform3D(0.4404508, -0.010010609, 0, 0.010010609, 0.4404508, 0, 0, 0, 0.44056454, 16.529686, 19.311966, 39.608868)
 
 [node name="Maison_Riche4" parent="." instance=ExtResource("12_i5g78")]
 transform = Transform3D(0.49233633, 0, 0, 0, 0.4761643, 0.12515035, 0, -0.12515035, 0.4761643, 24.8746, 18.417421, 4.282879)
+
+[node name="Maison_Riche7" parent="." instance=ExtResource("12_i5g78")]
+transform = Transform3D(0.4923364, 0, 0, 0, 0.49126253, 0.03250044, 0, -0.03250044, 0.49126253, 67.62587, 18.609398, 39.340252)
 
 [node name="Maison_Riche5" parent="." instance=ExtResource("12_i5g78")]
 transform = Transform3D(0.44786555, -0.123127274, 0, 0.123127274, 0.44786555, 0, 0, 0, 0.3716925, 67.656784, 16.697388, 0.5551586)
@@ -311,7 +321,7 @@ transform = Transform3D(-0.45633706, 0, 0.086951874, 0, 0.46454728, 0, -0.086951
 transform = Transform3D(-0.4398741, -0.12365255, 0.08381496, -0.121467166, 0.44778803, 0.023144724, -0.08695187, -3.2526188e-09, -0.456337, 36.396095, 9.093499, -39.430153)
 
 [node name="rampe" parent="." instance=ExtResource("18_am3y4")]
-transform = Transform3D(-0.1432335, 0, -0.98968893, 0, 1, 0, 0.98968893, 0, -0.1432335, 31.39599, 19.652596, 31.896961)
+transform = Transform3D(-0.32595378, 0, -0.84846056, 0, 1, 0, 2.2522166, 0, -0.1227941, 31.39599, 19.652596, 31.896961)
 
 [node name="Node3D14" parent="." instance=ExtResource("19_am3y4")]
 transform = Transform3D(0.49015063, 0, 0, 0, 0.49015063, 0, 0, 0, 0.49015063, 21.28021, -0.6966922, -92.52435)
@@ -362,3 +372,6 @@ transform = Transform3D(1.2575605, 0, 15.143875, 0, 15.196, 0, -15.143875, 0, 1.
 stream = ExtResource("19_l5n2q")
 volume_db = -13.433
 autoplay = true
+
+[node name="Barricade" parent="." instance=ExtResource("20_l5n2q")]
+transform = Transform3D(-4.3711385e-08, 0, 0.2986471, 0, 1.1894797, 0, -0.99999994, 0, -1.30542785e-08, -11.20335, 10.419613, -10.541824)

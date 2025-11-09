@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://pnxsg55p4l7c"]
+[gd_scene load_steps=7 format=3 uid="uid://dtymp0u8drjar"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_jfyg3"]
 [ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="2_x4ym8"]
