@@ -37,7 +37,9 @@ shape = SubResource("CapsuleShape3D_5bj1g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.1631985)
+visible = false
 shape = SubResource("ConcavePolygonShape3D_5bj1g")
+disabled = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 

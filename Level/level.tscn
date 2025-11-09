@@ -116,7 +116,7 @@ transform = Transform3D(-0.42156726, 0, -0.29179817, 0, 0.51270384, 0, 0.2917981
 transform = Transform3D(0.9296437, 0, 0, 0, 0.9073221, 0.20249459, 0, -0.20249459, 0.9073221, 33.00272, 0.39711213, -81.8955)
 
 [node name="tas_de_feuille2" parent="Zone1/DestructibleObjects" instance=ExtResource("10_1teg4")]
-transform = Transform3D(1, 0, 0, 0, 0.9846009, 0.17481685, 0, -0.17481685, 0.9846009, 32.466747, 1.7104125, -73.65285)
+transform = Transform3D(0.99605346, 0.08862959, 0.00472089, -0.08875522, 0.99464345, 0.052980077, 0, -0.053189993, 0.99858445, 32.466747, 0.8964734, -73.65285)
 
 [node name="Node3D8" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
 transform = Transform3D(-0.5595776, 0, 0.15060845, 0, 0.5794911, 0, -0.15060845, 0, -0.5595776, 54.647335, -1.4603852, -57.03891)
@@ -285,7 +285,7 @@ transform = Transform3D(0.9296437, 0, 0, 0, 0.9073221, 0.20249459, 0, -0.2024945
 particles = ExtResource("17_k8npl")
 
 [node name="tas_de_feuille2" parent="." instance=ExtResource("10_1teg4")]
-transform = Transform3D(1, 0, 0, 0, 0.9998007, 0.01996524, 0, -0.01996524, 0.9998007, 32.466747, 0.7124543, -73.65285)
+transform = Transform3D(0.7444048, -0.013331365, 0.6675955, 0, 0.9998007, 0.01996524, -0.66772866, -0.014862219, 0.74425644, 24.051653, 0.90353966, -59.1722)
 
 [node name="GUI" parent="." instance=ExtResource("11_1teg4")]
 
