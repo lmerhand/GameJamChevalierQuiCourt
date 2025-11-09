@@ -7,8 +7,6 @@ var _audio_lines : Array
 var _audio_timer : Timer
 
 func _ready() -> void:
-	print("bjr")
-	GlobalSignal.check_name.connect(play_audio2)
 	spectrum_instance = AudioServer.get_bus_effect_instance(1,0)
 	_audio_lines = get_voicelines(_audio_lines_path)
 	_audio_timer = Timer.new()
@@ -41,9 +39,6 @@ func audio_timer_randomizer():
 func play_audio():
 	$AudioStreamPlayer.stream = _audio_lines[randi_range(0,_audio_lines.size()-1)]
 	$AudioStreamPlayer.play() 
-
-func play_audio2(name):
-	print("yipee")
 
 func _process(delta: float) -> void:
 	var freq_start := 1000.0

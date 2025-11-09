@@ -113,7 +113,7 @@ func speed_up(tier):
 		_freeze_frame(0.05, 1.0)
 	if _current_tier == tier:
 		if _current_objects_destroyed+1 == _tiers_max[_current_tier]: #speed up!
-			move_speed *= 3
+			move_speed += 6
 			acceleration += 6
 			_camera_new_fov = clamp(_camera_new_fov * 1.3, 75.0, 70.0)
 			_skin.get_node("AnimationPlayer").speed_scale += 0.1

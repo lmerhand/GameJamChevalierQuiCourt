@@ -1,24 +1,23 @@
-[gd_scene load_steps=29 format=3 uid="uid://d0v40jhjlekji"]
+[gd_scene load_steps=25 format=3 uid="uid://d0v40jhjlekji"]
 
 [ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/barricade.tscn" id="1_52x1o"]
 [ext_resource type="PackedScene" uid="uid://cqh2xfh7wpwfy" path="res://Entity/EvilCastle/evil_castle.tscn" id="2_iincs"]
-[ext_resource type="PackedScene" uid="uid://mdteqoqht11v" path="res://Level/Props/Maison_départ.tscn" id="2_py82k"]
-[ext_resource type="Texture2D" uid="uid://basf87h3qtsmw" path="res://VFX/cliff_rocks_05_basecolor_1k.png" id="2_uqeto"]
+[ext_resource type="PackedScene" uid="uid://bcyqjm7j2o1d2" path="res://Level/Props/maison_depart.tscn" id="2_py82k"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="3_1teg4"]
 [ext_resource type="PackedScene" uid="uid://cj3q5w1tm74nr" path="res://Level/Props/tree1.tscn" id="3_nk1il"]
 [ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="4_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dk8bnqwaorx03" path="res://Level/Props/arbre_mort.tscn" id="5_nk1il"]
-[ext_resource type="PackedScene" uid="uid://d0oldok1gtfkc" path="res://Level/Props/camp_fire.tscn" id="6_d6qko"]
+[ext_resource type="PackedScene" uid="uid://bam524yr8g8f6" path="res://Level/Props/camp_fire.tscn" id="6_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dkjrrgxedqyls" path="res://Level/Props/tas_de_feuille.tscn" id="10_1teg4"]
 [ext_resource type="PackedScene" uid="uid://fj1cbf3jd4jx" path="res://Level/Props/door.tscn" id="10_py82k"]
 [ext_resource type="PackedScene" uid="uid://c60vk26jccr6o" path="res://GUI/gui.tscn" id="11_1teg4"]
 [ext_resource type="PackedScene" uid="uid://cpb3bvmwg64u2" path="res://Level/Props/maison_riche.tscn" id="12_i5g78"]
 [ext_resource type="PackedScene" uid="uid://b3acvlou5g0gs" path="res://Assets/terrain.blend" id="16_uqeto"]
-[ext_resource type="PackedScene" uid="uid://dg7sja145b57v" path="res://Level/Props/arrow.tscn" id="17_k8npl"]
+[ext_resource type="PackedScene" path="res://Level/Props/arrow.tscn" id="17_k8npl"]
 [ext_resource type="PackedScene" uid="uid://comf1is7mu5dm" path="res://Assets/rampe.blend" id="18_am3y4"]
 [ext_resource type="PackedScene" uid="uid://pnxsg55p4l7c" path="res://Level/Props/tree2.tscn" id="19_am3y4"]
 [ext_resource type="PackedScene" uid="uid://5weify2360mu" path="res://Level/Props/tent.tscn" id="20_cv6tn"]
-[ext_resource type="PackedScene" uid="uid://befjh5hc4nvjn" path="res://Level/Props/fontaine.tscn" id="21_cv6tn"]
+[ext_resource type="PackedScene" uid="uid://corbh4aa86ji" path="res://Level/Props/fontaine.tscn" id="21_cv6tn"]
 [ext_resource type="PackedScene" uid="uid://ejju0w3deplo" path="res://Level/Props/market.tscn" id="21_jghi6"]
 
 [sub_resource type="Curve" id="Curve_1p6h5"]
@@ -63,7 +62,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.9875404, 0.15736526, 0, -0.15736526, 0.9875404, 34.40693, 0.42144227, -81.602974)
 
 [node name="Tree17" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
-transform = Transform3D(-0.64751357, 0, -0.20534112, 0, 0.679293, 0, 0.20534112, 0, -0.64751357, 5.454527, 0.46228218, -73.376724)
+transform = Transform3D(-0.64751357, 0, -0.20534112, 0, 0.679293, 0, 0.20534112, 0, -0.64751357, 5.454527, -2.2567964, -73.376724)
 
 [node name="Node3D24" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
 transform = Transform3D(0.52682686, 0, 0.24137822, 0, 0.579491, 0, -0.24137822, 0, 0.52682686, 11.091003, 0, -84.2931)
@@ -78,13 +77,13 @@ transform = Transform3D(-0.26267233, 0, -0.44030488, 0, 0.51270384, 0, 0.4403048
 transform = Transform3D(0.0011507393, 0, -0.11879399, 0, 0.11879956, 0, 0.11879399, 0, 0.0011507393, 9.774501, 0.5289438, -70.60413)
 
 [node name="Tree5" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
-transform = Transform3D(0.49107367, 0, 0.46934578, 0, 0.6792929, 0, -0.46934578, 0, 0.49107367, 42.92612, 0.462286, -47.31093)
+transform = Transform3D(0.49107367, 0, 0.46934578, 0, 0.6792929, 0, -0.46934578, 0, 0.49107367, 42.92612, 3.8510919, -47.31093)
 
 [node name="Tree8" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
 transform = Transform3D(-0.5768069, 0, -0.35879326, 0, 0.6792929, 0, 0.35879326, 0, -0.5768069, 48.331654, 0.46228218, -51.470642)
 
 [node name="Tree9" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
-transform = Transform3D(0.41488054, 0, 0.5378783, 0, 0.679293, 0, -0.5378783, 0, 0.41488054, 52.66025, 0.46228218, -66.88255)
+transform = Transform3D(0.41488054, 0, 0.5378783, 0, 0.679293, 0, -0.5378783, 0, 0.41488054, 52.66025, -2.6437984, -66.88255)
 
 [node name="Tree11" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
 transform = Transform3D(0.49463922, 0, 0.46558672, 0, 0.679293, 0, -0.46558672, 0, 0.49463922, 58.239273, 0.46228218, -62.228012)
@@ -93,22 +92,22 @@ transform = Transform3D(0.49463922, 0, 0.46558672, 0, 0.679293, 0, -0.46558672, 
 transform = Transform3D(0.67712957, 0, 0.054171205, 0, 0.6792929, 0, -0.054171205, 0, 0.67712957, 60.25634, 0.462286, -70.0414)
 
 [node name="Tree10" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
-transform = Transform3D(-0.5139966, 0, 0.44412416, 0, 0.6792929, 0, -0.44412416, 0, -0.5139966, 47.470047, 0.46228218, -59.209404)
+transform = Transform3D(-0.5139966, 0, 0.44412416, 0, 0.6792929, 0, -0.44412416, 0, -0.5139966, 47.470047, -2.0569386, -59.209404)
 
 [node name="Tree16" parent="Zone1/DestructibleObjects" instance=ExtResource("3_nk1il")]
 transform = Transform3D(0.678436, 0, -0.034106962, 0, 0.67929304, 0, 0.034106962, 0, 0.678436, 13.918243, 0.46228218, -95.338554)
 
 [node name="Node3D9" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(-0.3045062, 0, 0.49303743, 0, 0.5794911, 0, -0.49303743, 0, -0.3045062, 60.37419, 0, -51.481255)
+transform = Transform3D(-0.3045062, 0, 0.49303743, 0, 0.5794911, 0, -0.49303743, 0, -0.3045062, 60.37419, 5.469346, -51.481255)
 
 [node name="Node3D12" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(-0.47322485, 0, -0.33446708, 0, 0.57949114, 0, 0.33446708, 0, -0.47322485, 53.628056, 0, -46.93235)
+transform = Transform3D(-0.47322485, 0, -0.33446708, 0, 0.57949114, 0, 0.33446708, 0, -0.47322485, 53.628056, 4.1791563, -46.93235)
 
 [node name="Node3D25" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
 transform = Transform3D(0.5491587, 0, -0.18502565, 0, 0.57949096, 0, 0.18502565, 0, 0.5491587, 3.1349254, 0, -84.9138)
 
 [node name="Node3D26" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(0.15064752, 0, 0.559567, 0, 0.579491, 0, -0.559567, 0, 0.15064752, 5.422431, 0, -92.722145)
+transform = Transform3D(0.15064752, 0, 0.559567, 0, 0.579491, 0, -0.559567, 0, 0.15064752, 8.474599, 0, -92.722145)
 
 [node name="ArbreMort6" parent="Zone1/DestructibleObjects" instance=ExtResource("5_nk1il")]
 transform = Transform3D(-0.42156726, 0, -0.29179817, 0, 0.51270384, 0, 0.29179817, 0, -0.42156726, 9.033313, 1.0099809, -74.27486)
@@ -120,22 +119,22 @@ transform = Transform3D(0.9296437, 0, 0, 0, 0.9073221, 0.20249459, 0, -0.2024945
 transform = Transform3D(1, 0, 0, 0, 0.9846009, 0.17481685, 0, -0.17481685, 0.9846009, 32.466747, 1.7104125, -73.65285)
 
 [node name="Node3D8" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(-0.5595776, 0, 0.15060845, 0, 0.5794911, 0, -0.15060845, 0, -0.5595776, 54.647335, 0, -57.03891)
+transform = Transform3D(-0.5595776, 0, 0.15060845, 0, 0.5794911, 0, -0.15060845, 0, -0.5595776, 54.647335, -1.4603852, -57.03891)
 
 [node name="Node3D14" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(0.30450615, 0, -0.4930375, 0, 0.57949114, 0, 0.4930375, 0, 0.30450615, 7.1037903, 0, -14.9282055)
+transform = Transform3D(0.30450615, 0, -0.4930375, 0, 0.57949114, 0, 0.4930375, 0, 0.30450615, 7.1037903, 7.1786666, -14.9282055)
 
 [node name="Node3D15" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(0.57949114, 0, 0, 0, 0.57949114, 0, 0, 0, 0.57949114, 12.510887, 0, -30.36464)
+transform = Transform3D(0.57949114, 0, 0, 0, 0.57949114, 0, 0, 0, 0.57949114, 12.510887, 2.8647513, -30.32217)
 
 [node name="Node3D16" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(-0.57948077, 0, -0.0034690243, 0, 0.57949114, 0, 0.0034690243, 0, -0.57948077, 7.7816086, 0, -24.990885)
+transform = Transform3D(-0.57948077, 0, -0.0034690243, 0, 0.57949114, 0, 0.0034690243, 0, -0.57948077, 7.7816086, 5.346488, -24.990885)
 
 [node name="Node3D17" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(0.47322488, 0, 0.33446705, 0, 0.57949114, 0, -0.33446705, 0, 0.47322488, 13.849926, 0, -19.477112)
+transform = Transform3D(0.47322488, 0, 0.33446705, 0, 0.57949114, 0, -0.33446705, 0, 0.47322488, 13.849926, 6.8840733, -19.477112)
 
 [node name="Node3D20" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
-transform = Transform3D(-0.57949114, 0, -5.0660724e-08, 0, 0.57949114, 0, 5.0660724e-08, 0, -0.57949114, 6.7174683, 0, -36.044823)
+transform = Transform3D(-0.57949114, 0, -5.0660724e-08, 0, 0.57949114, 0, 5.0660724e-08, 0, -0.57949114, 6.7174683, 1.3371954, -36.044823)
 
 [node name="Node3D21" parent="Zone1/DestructibleObjects" instance=ExtResource("4_d6qko")]
 transform = Transform3D(0.57948077, 0, 0.0034690746, 0, 0.57949114, 0, -0.0034690746, 0, 0.57948077, 11.446747, 0, -41.41858)
@@ -283,6 +282,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9875404, 0.15736526, 0, -0.15736526, 0.987
 
 [node name="Door" parent="." instance=ExtResource("10_py82k")]
 transform = Transform3D(0.9296437, 0, 0, 0, 0.9073221, 0.20249459, 0, -0.20249459, 0.9073221, 33.00272, 0.39711213, -81.8955)
+particles = ExtResource("17_k8npl")
 
 [node name="tas_de_feuille2" parent="." instance=ExtResource("10_1teg4")]
 transform = Transform3D(1, 0, 0, 0, 0.9998007, 0.01996524, 0, -0.01996524, 0.9998007, 32.466747, 0.7124543, -73.65285)

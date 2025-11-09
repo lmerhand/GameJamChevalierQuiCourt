@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpb3bvmwg64u2"]
+[gd_scene load_steps=6 format=3 uid="uid://cpb3bvmwg64u2"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_fw5gp"]
 [ext_resource type="PackedScene" uid="uid://bxf8yyvgd6u6g" path="res://Assets/Maison_riche1.blend" id="2_hpxpp"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_r4bvc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35qly"]
 size = Vector3(15.465738, 19.347168, 21.705553)
@@ -13,6 +14,7 @@ size = Vector3(12.799988, 19.03424, 17.705078)
 script = ExtResource("1_fw5gp")
 category = 3
 mesh = NodePath("MaisonRiche")
+particles = ExtResource("2_r4bvc")
 
 [node name="MaisonRiche" parent="." instance=ExtResource("2_hpxpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.060598, 1.1920929e-07, -7.4085464)

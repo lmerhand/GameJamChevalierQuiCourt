@@ -13,7 +13,7 @@ mouse_filter = 2
 
 [node name="ProgressBar" parent="." instance=ExtResource("1_3w8el")]
 layout_mode = 1
-offset_left = -355.0
-offset_top = -287.0
-offset_right = -22.326538
-offset_bottom = 252.5
+offset_left = -154.0
+offset_top = -238.0
+offset_right = -20.0
+offset_bottom = 249.57983

@@ -34,14 +34,15 @@ func _animation_destroy():
 			child.disabled = true
 	set_process(true)
 	var new_particle = particles.instantiate()
-	new_particle.emitting = true
-	add_child(new_particle)
+	self.add_child(new_particle)
+	new_particle.global_position = mesh.global_position
+	for particle in new_particle.get_children():
+		if particle.is_class("GPUParticles3D"):
+			particle.emitting = true
 	#fire particle
 	var tween = create_tween()
 	tween.tween_property(mesh,"scale",Vector3(0.0001,0.0001,0.0001),0.01)
-	tween.tween_callback(self.queue_free)
-	#tween.parallel()
-	#tween.tween_property(mesh,"rotation",Vector3(randf_range(0,10),randf_range(0,10),randf_range(0,10)),1)
+	tween.tween_callback(mesh.queue_free)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not body.is_class("CharacterBody3D"):
@@ -51,13 +52,14 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body._current_tier == category:
 		GlobalSignal.broke_an_obstacle.emit(category)
 		_emit_disappear()
-		queue_free()
+		_animation_destroy()
+		#queue_free()
 	# Cas : tier supérieur -> trop rapide, pas d'xp, disparition
 	elif body._current_tier > category:
 		print("too fast! no exp")
 		GlobalSignal.broke_an_obstacle.emit(category)
 		_emit_disappear()
-		queue_free()
+		_animation_destroy()
 	# Cas : tier inférieur -> heurté mais reste en place
 	else:
 		GlobalSignal.bumped_into_an_obstacle.emit()
@@ -67,5 +69,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _emit_disappear() -> void:
 	# Signal local : utile pour les connexions locales (par ex. le parent ou un contrôleur)
 	GlobalSignal.check_name.emit(self.name)
-	print(self.name)
 	

@@ -2,18 +2,15 @@
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_fgj6a"]
 [ext_resource type="PackedScene" uid="uid://cid8pyry6piaw" path="res://Assets/arbre_1.blend" id="1_mxpjo"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_2hfpa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fgj6a"]
 radius = 1.4008789
 height = 6.510254
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7reg"]
-radius = 3.371582
-height = 10.929077
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cpfa5"]
-radius = 2.1899414
-height = 4.9639893
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2hfpa"]
+height = 10.884399
+radius = 2.3432617
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dgyg2"]
 radius = 4.772949
@@ -21,25 +18,22 @@ height = 10.341064
 
 [node name="Tree1" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_fgj6a")
-category = 1
+category = 2
 mesh = NodePath("Tree1")
+particles = ExtResource("2_2hfpa")
 
 [node name="Tree1" parent="." instance=ExtResource("1_mxpjo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0927421, 0, 2.0624251)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35036993, 2.255127, 1.856559)
+transform = Transform3D(1, 0, 0, 0, 0.97683316, -0.21400228, 0, 0.21400228, 0.97683316, -0.35036993, 2.604642, 2.4463656)
 shape = SubResource("CapsuleShape3D_fgj6a")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.031026943, -0.9995186, 0, 0.9995186, 0.031026943, 0.70043087, 6.744155, 3.2982776)
-shape = SubResource("CapsuleShape3D_x7reg")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10876107, 1.748394, 2.222147)
-shape = SubResource("CapsuleShape3D_cpfa5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10876107, 5.0254326, 2.222147)
+shape = SubResource("CylinderShape3D_2hfpa")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.51010513, 7.5496244, 1.664917)

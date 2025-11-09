@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://fj1cbf3jd4jx"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_fuvxv"]
-[ext_resource type="PackedScene" uid="uid://bvaf2k0bpxfst" path="res://VFX/explosion_feuille.tscn" id="2_464ng"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_464ng"]
 [ext_resource type="PackedScene" uid="uid://yo6nxysn8f10" path="res://Assets/Door.blend" id="2_cs5fa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fuvxv"]

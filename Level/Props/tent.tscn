@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://5weify2360mu"]
+[gd_scene load_steps=6 format=3 uid="uid://5weify2360mu"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_wlbrq"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_ic11m"]
 [ext_resource type="PackedScene" uid="uid://bdabw0wtymtvh" path="res://Assets/Tent.blend" id="2_uo7hx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jdihh"]
@@ -13,13 +14,12 @@ size = Vector3(4.006958, 1.897583, 1.9472656)
 script = ExtResource("1_wlbrq")
 category = 1
 mesh = NodePath("Tent")
+particles = ExtResource("2_ic11m")
 
 [node name="Tent" parent="." instance=ExtResource("2_uo7hx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.765206, 0, 0.3242209)
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("1_wlbrq")
-category = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6948886, 0.6469116, 0.4074278)

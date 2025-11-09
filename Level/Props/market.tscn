@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ejju0w3deplo"]
+[gd_scene load_steps=7 format=3 uid="uid://ejju0w3deplo"]
 
 [ext_resource type="PackedScene" uid="uid://cpmpsx2ud3s6m" path="res://Assets/marché.blend" id="1_2y0jn"]
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="2_5kymy"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_b4coh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4coh"]
 size = Vector3(6.308281, 7.0717773, 9.830688)
@@ -16,13 +17,12 @@ size = Vector3(7.260788, 6.773926, 4.5214844)
 script = ExtResource("2_5kymy")
 category = 2
 mesh = NodePath("Market")
+particles = ExtResource("2_b4coh")
 
 [node name="Market" parent="." instance=ExtResource("1_2y0jn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58454335, 0, 1.1799612)
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("2_5kymy")
-category = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.511888, 3.0358887, 2.4230537)
