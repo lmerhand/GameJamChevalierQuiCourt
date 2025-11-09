@@ -7,9 +7,8 @@
 height = 10.482666
 radius = 8.383789
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_bcbv7"]
-height = 11.000244
-radius = 8.355957
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewoyl"]
+size = Vector3(18.389893, 11.1474, 18.927612)
 
 [node name="CampFire" type="StaticBody3D"]
 script = ExtResource("1_bjjod")
@@ -24,7 +23,7 @@ shape = SubResource("CylinderShape3D_0bkio")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9888568, 4.1052847, -7.406809)
-shape = SubResource("CylinderShape3D_bcbv7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0365863, 4.396697, -7.5256443)
+shape = SubResource("BoxShape3D_ewoyl")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

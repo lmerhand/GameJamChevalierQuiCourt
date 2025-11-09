@@ -11,11 +11,11 @@ radius = 5.255371
 height = 16.66211
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcjsg"]
-radius = 1.6132813
+radius = 2.0932617
 height = 10.015137
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_viiwn"]
-radius = 5.692383
+radius = 6.0546875
 height = 18.031494
 
 [node name="Node3D" type="StaticBody3D"]
@@ -42,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9719486, 3.895934, -0.31039
 shape = SubResource("CapsuleShape3D_lcjsg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.1907539, 11.002648, 0.38636398)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.704731, 11.002648, 0.38636398)
 shape = SubResource("CapsuleShape3D_viiwn")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
