@@ -1,7 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1swk3vdb7m8j"]
 
-[ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre 2.blend" id="1_l21x7"]
-[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_ypxmb"]
+[ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="1_l21x7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ypxmb"]
 radius = 1.4765625
