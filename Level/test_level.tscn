@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kb33k8e88owy"]
+[gd_scene load_steps=9 format=3 uid="uid://kb33k8e88owy"]
 
 [ext_resource type="PackedScene" uid="uid://c60vk26jccr6o" path="res://GUI/gui.tscn" id="1_5yf1o"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="1_httya"]
@@ -53,6 +53,9 @@ category = 0
 
 [node name="EvilCastle" parent="." instance=ExtResource("4_apcuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.623647, 0, 0)
+
+[node name="Plane" parent="EvilCastle/chateau_mechant" index="1"]
+transform = Transform3D(-4.0366688e-09, 0.28858125, 0, -0.09234822, -1.2614287e-08, 0, 0, 0, 0.22304507, -0.0074267983, 1.6411316, 0.59828305)
 
 [node name="AnimationTree" parent="EvilCastle/chateau_mechant" index="3"]
 parameters/blend_position = 0.72204804

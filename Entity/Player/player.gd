@@ -64,22 +64,28 @@ func _physics_process(delta: float) -> void:
 	
 	if move_direction.length() > 0.2:
 		_last_movement_direction = move_direction
+	var ground_speed := velocity.length()
+	if _skin.get_node("AnimationPlayer").speed_scale >= 1.0 and ground_speed > 0.0:
+		_skin.run()
+	elif _skin.get_node("AnimationPlayer").speed_scale <= 1.0 and ground_speed > 0.0:
+		_skin.move()
+	else:
+		_skin.idle()
 	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
 	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
 	_camera.fov = lerp(_camera.fov, _camera_new_fov, delta)
 	
 func speed_up():
-	if _current_objects_destroyed+1 == _tiers_max[_current_tier]:
+	if _current_objects_destroyed+1 == _tiers_max[_current_tier]: #speed up!
 		move_speed += 10
 		acceleration += 10
-		_camera_new_fov = clamp(_camera_new_fov* 1.2,75.0,179.0)
+		_camera_new_fov = clamp(_camera_new_fov * 1.3, 75.0, 179.0)
+		_skin.get_node("AnimationPlayer").speed_scale += 0.1
 		_current_objects_destroyed = 1
 		_current_tier = clamp(_current_tier + 1, 0, 4)
 		GlobalSignal.changed_tier.emit(_current_tier)
 	else:
-		print("HALF?",_current_objects_destroyed+1," == ", _tiers_max[_current_tier]/2)
-		if _current_objects_destroyed+1 == _tiers_max[_current_tier]/2:
+		if _current_objects_destroyed+1 == _tiers_max[_current_tier]/2: #if the tier is halfway done
 			GlobalSignal.changed_half_tier.emit(_current_tier)
-			print("SIGNAL EMITTED")
 		_current_objects_destroyed += 1
 	_current_tiers[_current_tier] = _current_objects_destroyed

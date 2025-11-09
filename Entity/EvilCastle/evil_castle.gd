@@ -32,12 +32,10 @@ func get_voicelines(path):
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
-	print(scene_loads)
 	return scene_loads
 func audio_timer_randomizer():
 	_audio_timer.start(randi_range(0,1))
 func play_audio():
-	print("Play audio")
 	$AudioStreamPlayer.stream = _audio_lines[randi_range(0,_audio_lines.size()-1)]
 	$AudioStreamPlayer.play() 
 
