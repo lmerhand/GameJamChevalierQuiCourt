@@ -27,13 +27,17 @@ radial_accel_max = -2.2351742e-06
 tangential_accel_min = 38.359997
 tangential_accel_max = 38.359997
 scale_min = 0.03
+scale_max = 0.03
 hue_variation_min = -0.57
 hue_variation_max = 0.7
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_beu5a"]
 orientation = 2
 
-[node name="GPUParticles3D" type="GPUParticles3D"]
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_6lpd5")
 emitting = false
 amount = 30

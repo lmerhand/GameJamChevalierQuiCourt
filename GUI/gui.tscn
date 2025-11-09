@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cols35b6pqb4t"]
+[gd_scene load_steps=2 format=3 uid="uid://c60vk26jccr6o"]
 
-[ext_resource type="PackedScene" path="res://GUI/progress_bar.tscn" id="1_3w8el"]
+[ext_resource type="PackedScene" uid="uid://ct4168ryyjdkp" path="res://GUI/progress_bar.tscn" id="1_3w8el"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ mouse_filter = 2
 
 [node name="ProgressBar" parent="." instance=ExtResource("1_3w8el")]
 layout_mode = 1
-offset_left = -479.0
-offset_top = -466.0
-offset_right = -23.0
-offset_bottom = 273.5
+offset_left = -154.0
+offset_top = -238.0
+offset_right = -20.0
+offset_bottom = 249.57983

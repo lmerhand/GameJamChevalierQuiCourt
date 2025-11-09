@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk8bnqwaorx03"]
+[gd_scene load_steps=6 format=3 uid="uid://dk8bnqwaorx03"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_71cc8"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_1tfc0"]
 [ext_resource type="PackedScene" uid="uid://c3vti5vccqw0c" path="res://Assets/Arbre_mort.blend" id="2_itnao"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tfc0"]
@@ -9,9 +10,11 @@ size = Vector3(6.591812, 2.2167454, 2.3397014)
 [sub_resource type="BoxShape3D" id="BoxShape3D_71cc8"]
 size = Vector3(6.1259766, 2.1385193, 1.7919846)
 
-[node name="ArbreMort" type="StaticBody3D"]
+[node name="ArbreMort" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_71cc8")
 category = 1
+mesh = NodePath("Arbre_mort")
+particles = ExtResource("2_1tfc0")
 
 [node name="Arbre_mort" parent="." instance=ExtResource("2_itnao")]
 

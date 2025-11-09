@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://mdteqoqht11v"]
+[gd_scene load_steps=9 format=3 uid="uid://bcyqjm7j2o1d2"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_x67d5"]
 [ext_resource type="PackedScene" uid="uid://c2ncj514git4l" path="res://Assets/HomeHouse.blend" id="2_1g380"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_cmt1s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qycy1"]
 size = Vector3(4.9956055, 5.3029785, 6.583557)
@@ -18,9 +19,11 @@ size = Vector3(0.81073, 4.5614624, 6.763672)
 [sub_resource type="BoxShape3D" id="BoxShape3D_37yyf"]
 size = Vector3(1, 5.3467712, 6.460327)
 
-[node name="Node3D" type="StaticBody3D"]
+[node name="MaisonDepart" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_x67d5")
 category = 3
+mesh = NodePath("HomeHouse")
+particles = ExtResource("2_cmt1s")
 
 [node name="HomeHouse" parent="." instance=ExtResource("2_1g380")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1301388, 0, -2.2655983)

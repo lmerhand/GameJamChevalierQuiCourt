@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+warnings/main_scene="uid://kb33k8e88owy"
+
 [application]
 
 config/name="ChevalierQuiCourt"
@@ -73,3 +77,4 @@ right_click={
 [rendering]
 
 renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="gl_compatibility"

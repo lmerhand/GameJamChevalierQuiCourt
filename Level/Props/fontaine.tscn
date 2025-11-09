@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://befjh5hc4nvjn"]
+[gd_scene load_steps=6 format=3 uid="uid://corbh4aa86ji"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_0owur"]
+[ext_resource type="PackedScene" uid="uid://cnrbuwrr5138f" path="res://VFX/explosion.tscn" id="2_2koad"]
 [ext_resource type="PackedScene" uid="uid://08057rvwl1b6" path="res://Assets/Fontaine.blend" id="2_wud50"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2koad"]
@@ -11,9 +12,11 @@ radius = 2.5092773
 height = 2.9956055
 radius = 2.1835938
 
-[node name="Fontaine" type="StaticBody3D"]
+[node name="Fontaine" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_0owur")
 category = 3
+mesh = NodePath("Fontaine2")
+particles = ExtResource("2_2koad")
 
 [node name="Fontaine2" parent="." instance=ExtResource("2_wud50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08268452, 0, -0.38439608)
