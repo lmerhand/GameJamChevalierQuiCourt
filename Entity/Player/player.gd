@@ -44,8 +44,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	#turns the camera according to the mouse drag
-	#_camera_pivot.rotation.x += _camera_input_direction.y * delta
-	#_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, -PI / 3.0, PI / 12.0)
+	_camera_pivot.rotation.x += _camera_input_direction.y * delta
+	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, -PI / 3.0, PI / 12.0)
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
 	
 	_camera_input_direction = Vector2.ZERO

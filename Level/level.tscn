@@ -1,12 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://d0v40jhjlekji"]
+[gd_scene load_steps=25 format=3 uid="uid://d0v40jhjlekji"]
 
-[ext_resource type="Shader" path="res://VFX/terrain.gdshader" id="1_1p6h5"]
-[ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/barricade.tscn" id="1_52x1o"]
 [ext_resource type="PackedScene" uid="uid://cqh2xfh7wpwfy" path="res://Entity/EvilCastle/evil_castle.tscn" id="2_iincs"]
 [ext_resource type="PackedScene" uid="uid://mdteqoqht11v" path="res://Level/Props/Maison_départ.tscn" id="2_py82k"]
-[ext_resource type="Texture2D" uid="uid://basf87h3qtsmw" path="res://VFX/cliff_rocks_05_basecolor_1k.png" id="2_uqeto"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="3_1teg4"]
-[ext_resource type="Texture2D" uid="uid://dngqof27xfisw" path="res://VFX/grass_01_color_1k.png" id="3_luomk"]
 [ext_resource type="PackedScene" uid="uid://cj3q5w1tm74nr" path="res://Level/Props/Tree1.tscn" id="3_nk1il"]
 [ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="4_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dk8bnqwaorx03" path="res://Level/Props/arbre_mort.tscn" id="5_nk1il"]
@@ -19,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dg7sja145b57v" path="res://Level/Props/arrow.tscn" id="17_k8npl"]
 [ext_resource type="PackedScene" uid="uid://comf1is7mu5dm" path="res://Assets/rampe.blend" id="18_am3y4"]
 [ext_resource type="PackedScene" uid="uid://pnxsg55p4l7c" path="res://Level/Props/tree2.tscn" id="19_am3y4"]
+[ext_resource type="AudioStream" uid="uid://dpm7gos0nhvhs" path="res://Entity/sound_chambouleur.wav" id="19_l5n2q"]
 [ext_resource type="PackedScene" uid="uid://5weify2360mu" path="res://Level/Props/tent.tscn" id="20_cv6tn"]
 [ext_resource type="PackedScene" uid="uid://befjh5hc4nvjn" path="res://Level/Props/fontaine.tscn" id="21_cv6tn"]
 [ext_resource type="PackedScene" uid="uid://ejju0w3deplo" path="res://Level/Props/market.tscn" id="21_jghi6"]
@@ -48,16 +45,6 @@ fog_density = 0.6518
 adjustment_enabled = true
 adjustment_color_correction = SubResource("CurveTexture_uqeto")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8npl"]
-render_priority = 0
-shader = ExtResource("1_1p6h5")
-shader_parameter/offset = 0.5
-shader_parameter/fade = 0.1
-shader_parameter/uv_scale_fg = Vector3(8.33, 3.91, 1)
-shader_parameter/uv_scale_bg = Vector3(1, 1, 1)
-shader_parameter/albedo_texture_fg = ExtResource("3_luomk")
-shader_parameter/albedo_texture_bg = ExtResource("2_uqeto")
-
 [node name="Level" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -71,19 +58,7 @@ shadow_enabled = true
 
 [node name="DestructibleObjects" type="Node" parent="Zone1"]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Zone1"]
-material_override = SubResource("ShaderMaterial_k8npl")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Zone1/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.72444, 0, -17.207874)
-visible = false
-use_collision = true
-size = Vector3(63.622284, 1, 161.3863)
-
 [node name="Zone2" type="Node" parent="."]
-
-[node name="Node3D" parent="." instance=ExtResource("1_52x1o")]
-transform = Transform3D(-6.50781e-08, -0.10134514, -0.26904792, -7.699044e-09, 0.856645, -0.031829633, 1.4991957, 3.816545e-16, -1.1842474e-08, 77.21717, 9.958349, -27.76823)
 
 [node name="Tree5" parent="." instance=ExtResource("3_nk1il")]
 transform = Transform3D(0.49107367, 0, 0.46934578, 0, 0.6792929, 0, -0.46934578, 0, 0.49107367, 42.92612, -1.0267501, -58.691826)
@@ -179,7 +154,7 @@ transform = Transform3D(0.49233633, 0, 0, 0, 0.4761643, 0.12515035, 0, -0.125150
 transform = Transform3D(0.44786555, -0.123127274, 0, 0.123127274, 0.44786555, 0, 0, 0, 0.3716925, 67.656784, 16.697388, 0.5551586)
 
 [node name="terrain" parent="." instance=ExtResource("16_uqeto")]
-transform = Transform3D(0.35256594, 0, 0, 0, 0.43938655, 0, 0, 0, 0.48958024, 32.601284, -1.986023, -29.407883)
+transform = Transform3D(0.35256582, 0.00029040425, 0.00035925987, -0.0002328285, 0.43938634, -0.00035225198, -0.00025889106, 0.00031591652, 0.48958, 32.601284, -1.986023, -29.407883)
 
 [node name="arrow" parent="." instance=ExtResource("17_k8npl")]
 transform = Transform3D(-0.45633706, 0, 0.086951874, 0, 0.46454728, 0, -0.086951874, 0, -0.45633706, 33.731102, 23.259474, 30.249138)
@@ -233,4 +208,9 @@ transform = Transform3D(0.30312747, -0.0023414493, 0.45428413, 0.00018757458, 0.
 transform = Transform3D(1, 0, 0, 0, 0.92589694, 0.37777615, 0, -0.37777615, 0.92589694, 40.740715, 15.888533, -2.9107878)
 
 [node name="EvilCastle" parent="." instance=ExtResource("2_iincs")]
-transform = Transform3D(-1.1664719e-06, 0, 26.685766, 0, 26.685766, 0, -26.685766, 0, -1.1664719e-06, 23.196877, 0.66646385, 83.0493)
+transform = Transform3D(1.2575605, 0, 15.143875, 0, 15.196, 0, -15.143875, 0, 1.2575605, 17.955711, 18.412184, 86.53343)
+
+[node name="Music (a desactivé si nul)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_l5n2q")
+volume_db = -13.433
+autoplay = true

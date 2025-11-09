@@ -1,76 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqh2xfh7wpwfy"]
+[gd_scene load_steps=6 format=3 uid="uid://cqh2xfh7wpwfy"]
 
 [ext_resource type="Script" uid="uid://8oofyg0dcy8o" path="res://Entity/EvilCastle/evil_castle.gd" id="1_ljjpk"]
 [ext_resource type="PackedScene" uid="uid://bhen8kc24pt0p" path="res://Assets/chateau_mechant.blend" id="2_ljjpk"]
 [ext_resource type="AudioStream" uid="uid://cuhygujcxgucu" path="res://Entity/EvilCastle/Voicelines/intro/Sors de laa.wav" id="3_ljjpk"]
-
-[sub_resource type="Animation" id="Animation_nollt"]
-resource_name = "Idle"
-length = 0.001
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Plane:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.008941414, -1.3973963e-08, -1.5707964)]
-}
-
-[sub_resource type="Animation" id="Animation_kps8n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Plane:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -1.5707964)]
-}
-
-[sub_resource type="Animation" id="Animation_bxqyl"]
-resource_name = "Talk"
-length = 0.001
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Plane:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.5235988, 0, -1.5707964)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7g5v"]
-_data = {
-&"Idle": SubResource("Animation_nollt"),
-&"RESET": SubResource("Animation_kps8n"),
-&"Talk": SubResource("Animation_bxqyl")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vbeqs"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ljjpk"]
-animation = &"Talk"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_jchrb"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_vbeqs")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_ljjpk")
-blend_point_1/pos = 1.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_w2w8l"]
 height = 5.2529297
@@ -82,25 +14,13 @@ size = Vector3(2.0810623, 2.5820618, 1.9565964)
 [node name="EvilCastle" type="StaticBody3D" node_paths=PackedStringArray("audio_player", "animation_tree")]
 script = ExtResource("1_ljjpk")
 audio_player = NodePath("AudioStreamPlayer")
-animation_tree = NodePath("chateau_mechant/AnimationTree")
+animation_tree = NodePath("")
 
 [node name="chateau_mechant" parent="." instance=ExtResource("2_ljjpk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15370047, 0, 0.62059927)
 
 [node name="Plane" parent="chateau_mechant" index="1"]
-transform = Transform3D(-4.0366683e-09, 0.28858125, 0, -0.09234821, -1.2614287e-08, 0, 0, 0, 0.22304507, -0.0074267983, 1.6411316, 0.59828305)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="chateau_mechant"]
-libraries = {
-&"": SubResource("AnimationLibrary_a7g5v")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="chateau_mechant"]
-unique_name_in_owner = true
-root_node = NodePath("%AnimationTree/..")
-tree_root = SubResource("AnimationNodeBlendSpace1D_jchrb")
-anim_player = NodePath("../AnimationPlayer")
-parameters/blend_position = -0.6187364
+transform = Transform3D(-4.0366683e-09, 0.28858125, 0, -0.09234821, -1.2614287e-08, 0, 0, 0, 0.22304502, -0.0074267983, 1.6411316, 0.59828305)
 
 [node name="Area3D" type="Area3D" parent="."]
 

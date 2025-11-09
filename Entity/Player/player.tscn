@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvgay2c7hrjje" path="res://Entity/Player/player.gd" id="1_mc1dd"]
 [ext_resource type="Material" uid="uid://bnkd6mf8sfn57" path="res://Assets/player/materials/toon_material.tres" id="2_qb0yx"]
-[ext_resource type="Script" uid="uid://c1u6fpucmwhxe" path="res://Entity/Player/skin.gd" id="2_viyt1"]
+[ext_resource type="Script" path="res://Entity/Player/skin.gd" id="2_viyt1"]
 [ext_resource type="Material" uid="uid://cj8evgchtnb2d" path="res://Assets/player/materials/outline.tres" id="3_viyt1"]
 [ext_resource type="Shader" uid="uid://desebuumcfqty" path="res://Assets/player/materials/shaders/toon_shader.gdshader" id="4_viyt1"]
 

@@ -6,6 +6,8 @@ var _audio_lines_path := "res://Entity/EvilCastle/Voicelines/Punch"
 var _audio_lines : Array
 var _audio_timer : Timer
 
+@onready var plane: Node3D = $chateau_mechant/Plane
+
 func _ready() -> void:
 	print("bjr")
 	GlobalSignal.check_name.connect(play_audio2)
@@ -49,4 +51,5 @@ func _process(delta: float) -> void:
 	var freq_start := 1000.0
 	var freq_end := 100.0
 	var magnitude = spectrum_instance.get_magnitude_for_frequency_range(freq_start,freq_end,1).length()
-	%AnimationTree.tree_root.set_blend_point_position(0,lerp(%AnimationTree.tree_root.get_blend_point_position(0), 3 * magnitude, 10*delta))
+	
+	plane.rotation.x = lerp(0, 45, clamp(magnitude / 50, 0, 1))

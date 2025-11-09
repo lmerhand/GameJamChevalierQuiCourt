@@ -29,4 +29,12 @@ shape = SubResource("CapsuleShape3D_oruh3")
 transform = Transform3D(1, 0, 0, 0, 0.060351703, 0.9981772, 0, -0.9981772, 0.060351703, -1.6022387, 10.71871, 1.2523518)
 shape = SubResource("CapsuleShape3D_5bj1g")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7460122, 2.49266, 1.2044973)
+shape = SubResource("CapsuleShape3D_oruh3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.060351703, 0.9981772, 0, -0.9981772, 0.060351703, -1.6022387, 10.71871, 1.2523518)
+shape = SubResource("CapsuleShape3D_5bj1g")
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
