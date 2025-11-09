@@ -3,9 +3,6 @@ extends Node3D
 @export var mesh : Node3D
 @export var particles : PackedScene = preload("res://VFX/explosion_feuille.tscn")
 
-func _ready() -> void:
-	set_process(false)
-
 @export var height: float = 3
 @export var duration: float = 5.0
 var player : CharacterBody3D
@@ -46,11 +43,8 @@ func _animation_destroy():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_class("CharacterBody3D"):
 		player = body
-		if body._current_tier == category:
-			GlobalSignal.broke_an_obstacle.emit()
-			_animation_destroy()
-		elif body._current_tier > category:
-			print("too fast! no exp")
+		if body._current_tier >= category:
+			GlobalSignal.broke_an_obstacle.emit(category)
 			_animation_destroy()
 		else:
 			GlobalSignal.bumped_into_an_obstacle.emit()

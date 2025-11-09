@@ -8,3 +8,7 @@ func idle():
 
 func run():
 	$AnimationPlayer.play("Run")
+
+func bump():
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("Hitpose_01")

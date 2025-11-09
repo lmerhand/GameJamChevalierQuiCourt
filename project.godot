@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+warnings/main_scene="uid://kb33k8e88owy"
+
 [application]
 
 config/name="ChevalierQuiCourt"
