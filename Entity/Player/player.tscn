@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cai6mvn1ydr3q"]
+[gd_scene load_steps=20 format=4 uid="uid://cai6mvn1ydr3q"]
 
 [ext_resource type="Script" uid="uid://dvgay2c7hrjje" path="res://Entity/Player/player.gd" id="1_mc1dd"]
 [ext_resource type="Material" uid="uid://bnkd6mf8sfn57" path="res://Assets/player/materials/toon_material.tres" id="2_qb0yx"]
@@ -1084,6 +1084,7 @@ mesh = SubResource("ArrayMesh_qb0yx")
 skin = SubResource("Skin_viyt1")
 
 [node name="Particles" type="GPUParticles3D" parent="Skin/PlayerSkeleton/Skeleton3D/Player"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3009249e-14, 0, 1.4101814)
 material_override = SubResource("ShaderMaterial_rawpq")
 material_overlay = ExtResource("3_viyt1")

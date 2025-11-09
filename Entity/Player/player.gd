@@ -60,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	move_direction = move_direction.normalized()
 	
 	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+	%Particles.get_process_material().gravity = velocity
 	move_and_slide()
 	
 	if move_direction.length() > 0.2:
