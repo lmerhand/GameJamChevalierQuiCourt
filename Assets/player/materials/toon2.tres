@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dviq83uk1jtot"]
+
+[ext_resource type="Shader" uid="uid://desebuumcfqty" path="res://Assets/player/materials/shaders/toon_shader.gdshader" id="1_3qjnb"]
+[ext_resource type="Texture2D" uid="uid://dbcx122ru3qwn" path="res://Assets/textures/UVMap.png" id="2_3qjnb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3qjnb")
+shader_parameter/ToonRampOffset = 0.477
+shader_parameter/ToonRampSmoothness = 0.04
+shader_parameter/ToonRampTinting = Color(0, 0, 0, 1)
+shader_parameter/RimPower = 1.275
+shader_parameter/RimCutOff = 0.38
+shader_parameter/RimSmoothness = 0.179
+shader_parameter/RimLightBrightness = 12.371
+shader_parameter/SubSurfDistortion = 0.0
+shader_parameter/SubSurfTint = Color(0, 0, 0, 1)
+shader_parameter/SubSurfBrightness = 3.0
+shader_parameter/SubSurfCutoff = 0.5
+shader_parameter/SubSurfSmoothness = 0.05
+shader_parameter/Texture = ExtResource("2_3qjnb")

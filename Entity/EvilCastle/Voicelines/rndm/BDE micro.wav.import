@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmgugehwu3j56"
+path="res://.godot/imported/BDE micro.wav-8fab864202a6227d97037f956934fb98.sample"
+
+[deps]
+
+source_file="res://Entity/EvilCastle/Voicelines/rndm/BDE micro.wav"
+dest_files=["res://.godot/imported/BDE micro.wav-8fab864202a6227d97037f956934fb98.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

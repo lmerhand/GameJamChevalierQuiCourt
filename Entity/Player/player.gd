@@ -4,13 +4,13 @@ extends CharacterBody3D
 @export_range(0.0,1.0) var mouse_sensitivity := 0.15
 
 @export_group("Movement")
-@export var move_speed := 8.0
+@export var move_speed := 3.0
 @export var acceleration := 30.0
 @export var rotation_speed := 12.0
 
 var current_speed : float
 
-var _tiers_max = {0:2, 1:10, 2:10, 3:10, 4:10}
+var _tiers_max = {0:2, 1:10, 2:3, 3:10, 4:10}
 var _current_tiers = {0:0, 1:0, 2:0, 3:0, 4:0}
 var _current_objects_destroyed = 0
 var _current_tier = 0
@@ -81,9 +81,9 @@ func _physics_process(delta: float) -> void:
 	
 func speed_up():
 	if _current_objects_destroyed+1 == _tiers_max[_current_tier]: #speed up!
-		move_speed += 10
-		acceleration += 10
-		_camera_new_fov = clamp(_camera_new_fov * 1.3, 75.0, 179.0)
+		move_speed *= 3
+		acceleration += 3
+		_camera_new_fov = clamp(_camera_new_fov * 1.3, 75.0, 70.0)
 		_skin.get_node("AnimationPlayer").speed_scale += 0.1
 		_current_objects_destroyed = 1
 		_current_tier = clamp(_current_tier + 1, 0, 4)

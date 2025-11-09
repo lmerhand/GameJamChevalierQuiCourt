@@ -1,50 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1swk3vdb7m8j"]
+[gd_scene load_steps=5 format=3 uid="uid://pnxsg55p4l7c"]
 
-[ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="1_l21x7"]
+[ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_jfyg3"]
+[ext_resource type="PackedScene" uid="uid://c1oed0pbdq68c" path="res://Assets/arbre_2.blend" id="2_x4ym8"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ypxmb"]
-radius = 1.4765625
-height = 7.7609863
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oruh3"]
+radius = 2.9145508
+height = 7.4556274
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4s0c2"]
-radius = 5.255371
-height = 16.66211
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcjsg"]
-radius = 2.0932617
-height = 10.015137
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_viiwn"]
-radius = 6.0546875
-height = 18.031494
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5bj1g"]
+radius = 5.720215
+height = 20.572754
 
 [node name="Node3D" type="StaticBody3D"]
-script = ExtResource("1_ypxmb")
+script = ExtResource("1_jfyg3")
 category = 1
 
-[node name="arbre 2" parent="." instance=ExtResource("1_l21x7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8369575, 0, -0.16452503)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8846886, 2.8804932, -0.31579566)
-shape = SubResource("CapsuleShape3D_ypxmb")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.91713405, 11.024391, 0.07080078)
-shape = SubResource("CapsuleShape3D_4s0c2")
+[node name="arbre_2" parent="." instance=ExtResource("2_x4ym8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8018547, -1.1920929e-07, 1.1178938)
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("1_ypxmb")
-category = 1
+script = ExtResource("1_jfyg3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9719486, 3.895934, -0.3103931)
-shape = SubResource("CapsuleShape3D_lcjsg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7460122, 2.49266, 1.2044973)
+shape = SubResource("CapsuleShape3D_oruh3")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.704731, 11.002648, 0.38636398)
-shape = SubResource("CapsuleShape3D_viiwn")
+transform = Transform3D(1, 0, 0, 0, 0.060351703, 0.9981772, 0, -0.9981772, 0.060351703, -1.6022387, 10.71871, 1.2523518)
+shape = SubResource("CapsuleShape3D_5bj1g")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-
-[editable path="arbre 2"]

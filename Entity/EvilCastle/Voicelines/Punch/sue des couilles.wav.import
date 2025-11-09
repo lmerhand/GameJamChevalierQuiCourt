@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0lc5y1tri7mc"
+path="res://.godot/imported/sue des couilles.wav-0166f2b894b37e9dd3374ecba07fefc5.sample"
+
+[deps]
+
+source_file="res://Entity/EvilCastle/Voicelines/Punch/sue des couilles.wav"
+dest_files=["res://.godot/imported/sue des couilles.wav-0166f2b894b37e9dd3374ecba07fefc5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

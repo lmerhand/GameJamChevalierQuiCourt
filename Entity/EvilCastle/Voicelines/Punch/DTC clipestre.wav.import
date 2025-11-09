@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://caw624j4agkre"
+path="res://.godot/imported/DTC clipestre.wav-48133e72b4cab054d338b2edc271de2a.sample"
+
+[deps]
+
+source_file="res://Entity/EvilCastle/Voicelines/Punch/DTC clipestre.wav"
+dest_files=["res://.godot/imported/DTC clipestre.wav-48133e72b4cab054d338b2edc271de2a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

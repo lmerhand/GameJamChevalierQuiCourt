@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c3vti5vccqw0c" path="res://Assets/Arbre_mort.blend" id="2_itnao"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tfc0"]
-size = Vector3(6.572296, 2.1433487, 2.1497407)
+size = Vector3(6.591812, 2.2167454, 2.3397014)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71cc8"]
-size = Vector3(6.1259766, 2.2789917, 2.434021)
+size = Vector3(6.1259766, 2.1385193, 1.7919846)
 
 [node name="ArbreMort" type="StaticBody3D"]
 script = ExtResource("1_71cc8")
@@ -18,11 +18,11 @@ category = 1
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009181976, -0.096645355, -0.015623331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005760193, 0.049376488, 0.033133626)
 shape = SubResource("BoxShape3D_1tfc0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033691406, -0.029937744, 0.013824463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033691406, 0.040298462, 0.031398773)
 shape = SubResource("BoxShape3D_71cc8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

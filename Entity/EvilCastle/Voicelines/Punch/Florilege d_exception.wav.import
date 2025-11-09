@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bem7an04gybej"
+path="res://.godot/imported/Florilege d_exception.wav-678512adc9c13ab189c314dc1928ec8a.sample"
+
+[deps]
+
+source_file="res://Entity/EvilCastle/Voicelines/Punch/Florilege d_exception.wav"
+dest_files=["res://.godot/imported/Florilege d_exception.wav-678512adc9c13ab189c314dc1928ec8a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hvji8osuujl6"
+path="res://.godot/imported/Sors de laaa.wav-0bcc27738557e3dd9b02c0599ed39d5f.sample"
+
+[deps]
+
+source_file="res://Entity/EvilCastle/Voicelines/intro/Sors de laaa.wav"
+dest_files=["res://.godot/imported/Sors de laaa.wav-0bcc27738557e3dd9b02c0599ed39d5f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

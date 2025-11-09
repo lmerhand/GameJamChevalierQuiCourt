@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgodrmwe7wtxh"
+path="res://.godot/imported/Bourse qui colle.wav-61bf3628bb67f1bc815c0947b1ca6d58.sample"
+
+[deps]
+
+source_file="res://Entity/EvilCastle/Voicelines/Punch/Bourse qui colle.wav"
+dest_files=["res://.godot/imported/Bourse qui colle.wav-61bf3628bb67f1bc815c0947b1ca6d58.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

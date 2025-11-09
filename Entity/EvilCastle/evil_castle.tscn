@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8oofyg0dcy8o" path="res://Entity/EvilCastle/evil_castle.gd" id="1_ljjpk"]
 [ext_resource type="PackedScene" uid="uid://bhen8kc24pt0p" path="res://Assets/chateau_mechant.blend" id="2_ljjpk"]
-[ext_resource type="AudioStream" uid="uid://baxh3iqyt34gq" path="res://Entity/EvilCastle/Voicelines/audioadelete.mp3" id="3_ljjpk"]
+[ext_resource type="AudioStream" uid="uid://bykwskt0ij87j" path="res://Entity/EvilCastle/Voicelines/Punch/armure sied guere.wav" id="3_ljjpk"]
 
 [sub_resource type="Animation" id="Animation_nollt"]
 resource_name = "Idle"

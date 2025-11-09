@@ -37,7 +37,7 @@ func audio_timer_randomizer():
 	_audio_timer.start(randi_range(0,1))
 func play_audio():
 	$AudioStreamPlayer.stream = _audio_lines[randi_range(0,_audio_lines.size()-1)]
-	$AudioStreamPlayer.play() 
+	$AudioStreamPlayer.play("res://Entity/EvilCastle/Voicelines/intro/Intro 1.wav") 
 
 func _process(delta: float) -> void:
 	var freq_start := 1000.0
