@@ -21,7 +21,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26301575, 1.3410645, 1.2705
 shape = SubResource("BoxShape3D_fuvxv")
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("1_fuvxv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20938492, 1.3745875, 1.2044973)

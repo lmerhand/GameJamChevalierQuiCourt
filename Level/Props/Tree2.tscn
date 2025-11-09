@@ -13,7 +13,7 @@ height = 20.572754
 
 [node name="Node3D" type="StaticBody3D"]
 script = ExtResource("1_jfyg3")
-category = 1
+category = 3
 
 [node name="arbre_2" parent="." instance=ExtResource("2_x4ym8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8018547, -1.1920929e-07, 1.1178938)

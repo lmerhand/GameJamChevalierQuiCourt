@@ -9,7 +9,7 @@ radius = 2.5092773
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0owur"]
 height = 2.9956055
-radius = 2.8222656
+radius = 2.1835938
 
 [node name="Fontaine" type="StaticBody3D"]
 script = ExtResource("1_0owur")
@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08268452, 0, -0.38439608)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05779457, 1.1040039, -0.35640144)
 shape = SubResource("CylinderShape3D_2koad")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08268452, 1.1086426, -0.38439608)
 shape = SubResource("CylinderShape3D_0owur")
 
