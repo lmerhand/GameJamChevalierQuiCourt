@@ -1,13 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0v40jhjlekji"]
+[gd_scene load_steps=15 format=3 uid="uid://vshyn73qjnkr"]
 
-[ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/Barricade.tscn" id="1_52x1o"]
+[ext_resource type="PackedScene" uid="uid://77qdmxovu7mm" path="res://Level/Props/barricade.tscn" id="1_52x1o"]
 [ext_resource type="PackedScene" uid="uid://dp7axkifkix7b" path="res://Level/Props/Chateau.tscn" id="2_iincs"]
+[ext_resource type="PackedScene" uid="uid://mdteqoqht11v" path="res://Level/Props/Maison_départ.tscn" id="2_py82k"]
+[ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="3_1teg4"]
 [ext_resource type="PackedScene" uid="uid://cj3q5w1tm74nr" path="res://Level/Props/Tree1.tscn" id="3_nk1il"]
 [ext_resource type="PackedScene" uid="uid://c1swk3vdb7m8j" path="res://Level/Props/Tree2.tscn" id="4_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dk8bnqwaorx03" path="res://Level/Props/arbre_mort.tscn" id="5_nk1il"]
 [ext_resource type="PackedScene" uid="uid://d0oldok1gtfkc" path="res://Level/Props/CampFire.tscn" id="6_d6qko"]
+[ext_resource type="PackedScene" uid="uid://dkjrrgxedqyls" path="res://Level/Props/tas_de_feuille.tscn" id="10_1teg4"]
+[ext_resource type="PackedScene" uid="uid://fj1cbf3jd4jx" path="res://Level/Props/door.tscn" id="10_py82k"]
+[ext_resource type="PackedScene" path="res://GUI/gui.tscn" id="11_1teg4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d6qko"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_22cqp"]
+sky_material = SubResource("ProceduralSkyMaterial_d6qko")
+
+[sub_resource type="Environment" id="Environment_wqlfs"]
+background_mode = 2
+sky = SubResource("Sky_22cqp")
+tonemap_mode = 2
 
 [node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wqlfs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 28.031004, 13.11235, -47.932793)
+shadow_enabled = true
 
 [node name="Zone1" type="Node" parent="."]
 
@@ -165,3 +189,17 @@ transform = Transform3D(-0.42156726, 0, -0.29179817, 0, 0.51270384, 0, 0.2917981
 
 [node name="CampFire2" parent="." instance=ExtResource("6_d6qko")]
 transform = Transform3D(0.0011507393, 0, -0.11879399, 0, 0.11879956, 0, 0.11879399, 0, 0.0011507393, 9.774501, 0.5289438, -70.60413)
+
+[node name="Player" parent="." instance=ExtResource("3_1teg4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.02536, 1.1828415, -84.61293)
+
+[node name="Node3D18" parent="." instance=ExtResource("2_py82k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.40693, 0, -81.602974)
+
+[node name="Door" parent="." instance=ExtResource("10_py82k")]
+transform = Transform3D(0.9296437, 0, 0, 0, 0.9296437, 0, 0, 0, 0.9296437, 33.00272, 0, -81.8955)
+
+[node name="tas_de_feuille2" parent="." instance=ExtResource("10_1teg4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.466747, -2.3841858e-07, -75.60287)
+
+[node name="GUI" parent="." instance=ExtResource("11_1teg4")]

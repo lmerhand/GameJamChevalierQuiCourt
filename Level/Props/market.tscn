@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="2_5kymy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4coh"]
-size = Vector3(6.308281, 7.0717773, 9.313477)
+size = Vector3(6.308281, 7.0717773, 9.830688)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1rkc"]
-size = Vector3(7.4143066, 6.616028, 5.1536865)
+size = Vector3(9.7071, 6.616028, 5.1536865)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0y8h"]
 size = Vector3(7.260788, 6.773926, 4.5214844)
@@ -36,15 +36,15 @@ script = ExtResource("2_5kymy")
 category = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.511888, 3.0358887, 2.4300728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.511888, 3.0358887, 2.4230537)
 shape = SubResource("BoxShape3D_b4coh")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.70710677, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710677, 0.77715266, 2.808014, -9.648058)
+transform = Transform3D(0.70710677, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710677, 0.84386206, 2.808014, -9.714767)
 shape = SubResource("BoxShape3D_v1rkc")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 10.940029, 2.808014, -15.690446)
+transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 10.877743, 2.808014, -15.690446)
 shape = SubResource("BoxShape3D_v1rkc")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

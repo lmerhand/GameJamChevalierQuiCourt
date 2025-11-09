@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://kb33k8e88owy"]
+[gd_scene load_steps=10 format=3 uid="uid://kb33k8e88owy"]
 
-[ext_resource type="PackedScene" uid="uid://c60vk26jccr6o" path="res://GUI/gui.tscn" id="1_5yf1o"]
+[ext_resource type="PackedScene" path="res://GUI/gui.tscn" id="1_5yf1o"]
 [ext_resource type="PackedScene" uid="uid://cai6mvn1ydr3q" path="res://Entity/Player/player.tscn" id="1_httya"]
 [ext_resource type="PackedScene" uid="uid://bca42tk2suc1s" path="res://Level/Object/destructible_object.tscn" id="3_5yf1o"]
+[ext_resource type="PackedScene" uid="uid://cdvxhnj08stky" path="res://Assets/tas_de_feuille.blend" id="4_73g8c"]
+[ext_resource type="PackedScene" uid="uid://dkjrrgxedqyls" path="res://Level/Props/tas_de_feuille.tscn" id="5_3qvu4"]
 
 [sub_resource type="Environment" id="Environment_httya"]
 ambient_light_source = 3
@@ -50,4 +52,14 @@ category = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2842712, 0.5764723, 14.402649)
 category = 0
 
+[node name="tas_de_feuille2" parent="." instance=ExtResource("4_73g8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81991, -9.536743e-07, 12.974432)
+
+[node name="tas_de_feuille" parent="tas_de_feuille2" index="0"]
+transform = Transform3D(0.32259098, -0.3153982, 5.350379e-08, 0, -5.378189e-08, -0.6420092, 0.3153981, 0.3225911, -5.472398e-08, -8.331219, 4.0816536, -15.4440565)
+
+[node name="tas_de_feuille2" parent="tas_de_feuille2" instance=ExtResource("5_3qvu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.184085, 1.4305115e-06, -2.212635)
+
 [editable path="DestructibleObject2"]
+[editable path="tas_de_feuille2"]

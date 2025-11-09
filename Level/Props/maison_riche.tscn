@@ -7,7 +7,7 @@
 size = Vector3(12.248291, 19.03424, 16.295898)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35qly"]
-size = Vector3(12.462067, 19.347168, 16.232315)
+size = Vector3(14.828285, 19.347168, 21.428684)
 
 [node name="Maison_Riche" type="StaticBody3D"]
 script = ExtResource("1_fw5gp")
@@ -25,7 +25,7 @@ script = ExtResource("1_fw5gp")
 category = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.133871, 9.653991, -6.5005407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.213381, 9.653991, -6.372136)
 shape = SubResource("BoxShape3D_35qly")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
