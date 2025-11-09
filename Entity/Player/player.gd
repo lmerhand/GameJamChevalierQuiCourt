@@ -10,6 +10,16 @@ extends CharacterBody3D
 
 var current_speed : float
 
+var shake_intensity : float = 0.0
+var active_shake_time: float = 0.0
+
+var shake_decay: float = 5.0
+
+var shake_time: float = 0.0
+var shake_time_speed: float = 20.0
+
+var noise = FastNoiseLite.new()
+
 var _tiers_max = {0:2, 1:10, 2:10, 3:10, 4:10}
 var _current_tiers = {0:0, 1:0, 2:0, 3:0, 4:0}
 var _current_objects_destroyed = 0
@@ -79,7 +89,24 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += get_gravity().y
 	
+	if active_shake_time > 0:
+		shake_time += delta * shake_time_speed
+		active_shake_time -= delta
+		
+		_camera.v_offset = noise.get_noise_2d(shake_time, 0) * shake_intensity
+		_camera.h_offset = noise.get_noise_2d(0, shake_time) * shake_intensity
+		shake_intensity = max(shake_intensity - shake_decay * delta, 0)
+	else:
+		_camera.h_offset = lerp(_camera.h_offset, 0.0, 10.5 * delta)
+		_camera.v_offset = lerp(_camera.v_offset, 0.0, 10.5 * delta)
+
 func speed_up():
+	if _current_tier == 0:
+		screen_shake(0.8,0.05)
+		_freeze_frame(0.05,0.5)
+	else:
+		screen_shake(1, 0.05)
+		_freeze_frame(0.05, 1.0)
 	if _current_objects_destroyed+1 == _tiers_max[_current_tier]: #speed up!
 		move_speed += 10
 		acceleration += 10
@@ -93,3 +120,15 @@ func speed_up():
 			GlobalSignal.changed_half_tier.emit(_current_tier)
 		_current_objects_destroyed += 1
 	_current_tiers[_current_tier] = _current_objects_destroyed
+
+func _freeze_frame(timescale, duration):
+	Engine.time_scale = timescale
+	await get_tree().create_timer(duration * timescale).timeout
+	Engine.time_scale = 1.0
+func screen_shake(intensity: int, time: float):
+	randomize()
+	noise.seed = randi()
+	noise.frequency = 2.0
+	shake_intensity = intensity
+	active_shake_time = time
+	shake_time = 0.0

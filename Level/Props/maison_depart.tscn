@@ -18,9 +18,10 @@ size = Vector3(0.81073, 4.5614624, 6.763672)
 [sub_resource type="BoxShape3D" id="BoxShape3D_37yyf"]
 size = Vector3(1, 5.3467712, 6.460327)
 
-[node name="Node3D" type="StaticBody3D"]
+[node name="MaisonDepart" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_x67d5")
 category = 3
+mesh = NodePath("HomeHouse")
 
 [node name="HomeHouse" parent="." instance=ExtResource("2_1g380")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1301388, 0, -2.2655983)

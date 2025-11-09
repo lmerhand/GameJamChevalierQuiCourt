@@ -12,24 +12,13 @@ size = Vector3(9.7071, 6.616028, 5.1536865)
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0y8h"]
 size = Vector3(7.260788, 6.773926, 4.5214844)
 
-[node name="Market" type="StaticBody3D"]
+[node name="Market" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("2_5kymy")
 category = 2
+mesh = NodePath("Market")
 
-[node name="marché" parent="." instance=ExtResource("1_2y0jn")]
+[node name="Market" parent="." instance=ExtResource("1_2y0jn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58454335, 0, 1.1799612)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="marché"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.699356, 3.0358887, 0.9477539)
-shape = SubResource("BoxShape3D_b4coh")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="marché"]
-transform = Transform3D(0.70710677, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710677, 1.3399996, 2.808014, -10.650141)
-shape = SubResource("BoxShape3D_v1rkc")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="marché"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.609003, 2.886963, -16.554981)
-shape = SubResource("BoxShape3D_w0y8h")
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("2_5kymy")
@@ -46,5 +35,17 @@ shape = SubResource("BoxShape3D_v1rkc")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 10.877743, 2.808014, -15.690446)
 shape = SubResource("BoxShape3D_v1rkc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2838993, 3.0358887, 2.127715)
+shape = SubResource("BoxShape3D_b4coh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.70710677, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.70710677, 0.7554562, 2.808014, -9.47018)
+shape = SubResource("BoxShape3D_v1rkc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.02446, 2.886963, -15.37502)
+shape = SubResource("BoxShape3D_w0y8h")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

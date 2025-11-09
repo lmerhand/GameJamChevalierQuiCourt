@@ -10,9 +10,10 @@ radius = 8.383789
 [sub_resource type="BoxShape3D" id="BoxShape3D_ewoyl"]
 size = Vector3(18.389893, 11.1474, 18.927612)
 
-[node name="CampFire" type="StaticBody3D"]
+[node name="CampFire" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_bjjod")
 category = 1
+mesh = NodePath("feu_de_camp")
 
 [node name="feu_de_camp" parent="." instance=ExtResource("2_mdbto")]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fj1cbf3jd4jx"]
+[gd_scene load_steps=6 format=3 uid="uid://fj1cbf3jd4jx"]
 
 [ext_resource type="Script" uid="uid://6oq6tjvhi31w" path="res://Level/Object/destructible_object.gd" id="1_fuvxv"]
+[ext_resource type="PackedScene" uid="uid://bvaf2k0bpxfst" path="res://VFX/explosion_feuille.tscn" id="2_464ng"]
 [ext_resource type="PackedScene" uid="uid://yo6nxysn8f10" path="res://Assets/Door.blend" id="2_cs5fa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fuvxv"]
@@ -9,9 +10,11 @@ size = Vector3(1.6681824, 2.7749023, 0.18164063)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cs5fa"]
 size = Vector3(1.9075661, 2.891489, 0.7434387)
 
-[node name="Door" type="StaticBody3D"]
+[node name="Door" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_fuvxv")
 category = 0
+mesh = NodePath("Door")
+particles = ExtResource("2_464ng")
 
 [node name="Door" parent="." instance=ExtResource("2_cs5fa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24921417, 0, 1.2765335)
@@ -21,7 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26301575, 1.3410645, 1.2705
 shape = SubResource("BoxShape3D_fuvxv")
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("1_fuvxv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20938492, 1.3745875, 1.2044973)

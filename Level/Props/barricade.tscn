@@ -9,11 +9,12 @@ size = Vector3(4.6256104, 17.57257, 328.93628)
 [sub_resource type="BoxShape3D" id="BoxShape3D_swj1u"]
 size = Vector3(12.50663, 17.429352, 338.40228)
 
-[node name="Node3D" type="StaticBody3D"]
+[node name="Barricade" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_2mb03")
 category = 2
+mesh = NodePath("Mesh")
 
-[node name="barica_blendde" parent="." instance=ExtResource("1_2rsm1")]
+[node name="Mesh" parent="." instance=ExtResource("1_2rsm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.157287, 1.1920929e-07, -0.2743652)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

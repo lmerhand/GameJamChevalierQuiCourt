@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ChevalierQuiCourt"
-run/main_scene="uid://d0v40jhjlekji"
+run/main_scene="uid://os3baa6bufos"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -73,3 +73,4 @@ right_click={
 [rendering]
 
 renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="gl_compatibility"
