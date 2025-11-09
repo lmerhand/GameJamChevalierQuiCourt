@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb2ixhtljj8o8"]
+
+[ext_resource type="Texture2D" uid="uid://dj5o0kwtgexpp" path="res://Assets/Leaf01.png" id="1_3e8na"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmetl"]
+transparency = 1
+albedo_texture = ExtResource("1_3e8na")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7p4dm"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(0.033190515, 0, 0, 0, 0.033190515, 0, 0, 0, 0.033190515, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_pmetl")
+mesh = SubResource("PlaneMesh_7p4dm")

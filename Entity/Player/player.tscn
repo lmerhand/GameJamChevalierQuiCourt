@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://cai6mvn1ydr3q"]
+[gd_scene load_steps=19 format=4 uid="uid://cai6mvn1ydr3q"]
 
 [ext_resource type="Script" uid="uid://dvgay2c7hrjje" path="res://Entity/Player/player.gd" id="1_mc1dd"]
 [ext_resource type="Material" uid="uid://bnkd6mf8sfn57" path="res://Assets/player/materials/toon_material.tres" id="2_qb0yx"]
 [ext_resource type="Material" uid="uid://cj8evgchtnb2d" path="res://Assets/player/materials/outline.tres" id="3_viyt1"]
+[ext_resource type="Shader" uid="uid://desebuumcfqty" path="res://Assets/player/materials/shaders/toon_shader.gdshader" id="4_viyt1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xclk5"]
 
@@ -66,6 +67,39 @@ bind/9/pose = Transform3D(-6.37739e-07, 0.214406, 0.976741, 4.26324e-13, -0.9767
 bind/10/name = &"Cape02"
 bind/10/bone = -1
 bind/10/pose = Transform3D(-8.79132e-07, 0.349438, 0.936956, 9.94756e-13, -0.936959, 0.349438, 1, 3.07204e-07, 8.23712e-07, -0.41323, -1.07123, -3.63285e-07)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rawpq"]
+render_priority = 0
+shader = ExtResource("4_viyt1")
+shader_parameter/ToonRampOffset = 0.477
+shader_parameter/ToonRampSmoothness = 0.04
+shader_parameter/ToonRampTinting = Color(0, 0, 0, 1)
+shader_parameter/RimPower = 1.275
+shader_parameter/RimCutOff = 0.38
+shader_parameter/RimSmoothness = 0.179
+shader_parameter/RimLightBrightness = 12.371
+shader_parameter/SubSurfDistortion = 0.0
+shader_parameter/SubSurfTint = Color(0, 0, 0, 1)
+shader_parameter/SubSurfBrightness = 3.0
+shader_parameter/SubSurfCutoff = 0.5
+shader_parameter/SubSurfSmoothness = 0.05
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_viyt1"]
+gravity = Vector3(0, 0.805, 3.105)
+radial_accel_min = 3.4299977
+radial_accel_max = 3.4299977
+tangential_accel_min = 1.3699977
+tangential_accel_max = 1.3699977
+scale_min = 0.39999998
+scale_max = 1.1999999
+anim_speed_max = 0.55
+turbulence_noise_scale = 3.167
+
+[sub_resource type="SphereMesh" id="SphereMesh_qb0yx"]
+radius = 0.15
+height = 0.3
+radial_segments = 5
+rings = 3
 
 [sub_resource type="Animation" id="Animation_dc1pm"]
 resource_name = "Hitpose_01"
@@ -1041,10 +1075,18 @@ bones/10/rotation = Quaternion(5.3383186e-08, 1.2039699e-07, -0.070385486, 0.997
 bones/10/scale = Vector3(1, 0.999999, 1)
 
 [node name="Player" type="MeshInstance3D" parent="Skin/PlayerSkeleton/Skeleton3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 material_override = ExtResource("2_qb0yx")
 material_overlay = ExtResource("3_viyt1")
 mesh = SubResource("ArrayMesh_qb0yx")
 skin = SubResource("Skin_viyt1")
+
+[node name="Particles" type="GPUParticles3D" parent="Skin/PlayerSkeleton/Skeleton3D/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3009249e-14, 0, 1.4101814)
+material_override = SubResource("ShaderMaterial_rawpq")
+material_overlay = ExtResource("3_viyt1")
+process_material = SubResource("ParticleProcessMaterial_viyt1")
+draw_pass_1 = SubResource("SphereMesh_qb0yx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
@@ -1054,7 +1096,7 @@ autoplay = "Walk"
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52502775, 0.28796434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
 shape = SubResource("SphereShape3D_mc1dd")
